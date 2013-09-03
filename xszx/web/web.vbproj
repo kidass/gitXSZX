@@ -1,0 +1,1074 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0F8F9FFA-7860-4CD5-ACF4-3815E4E5D7C2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>Xydc.Platform.web</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>Off</OptionInfer>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>xszx.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Xydc.Platform.web.xml</DocumentationFile>
+    <NoWarn>41998,42004,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Xydc.Platform.web.xml</DocumentationFile>
+    <NoWarn>41998,42004,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentArt.Web.UI, Version=2.1.2180.0, Culture=neutral, PublicKeyToken=7f1155316a506a74" />
+    <Reference Include="GemBox.ExcelLite, Version=23.1.5000.1000, Culture=neutral, PublicKeyToken=358b0bb27b60b246" />
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73" />
+    <Reference Include="Josco.Web.PopMessage, Version=1.0.1600.0, Culture=neutral, PublicKeyToken=95af75da7b69e030" />
+    <Reference Include="Microsoft.Web.UI.WebControls, Version=1.0.2.226, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="Xydc.Net.FtpWebRequest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=979beb151d6a11a4, processorArchitecture=MSIL" />
+    <Reference Include="Xydc.Platform.BusinessFacade, Version=1.0.0.0, Culture=neutral, PublicKeyToken=632c4ddd232010e4, processorArchitecture=MSIL" />
+    <Reference Include="Xydc.Platform.BusinessRules, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1c51255e0c337df3, processorArchitecture=MSIL" />
+    <Reference Include="Xydc.Platform.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=70a9c1086133436f, processorArchitecture=MSIL" />
+    <Reference Include="Xydc.Platform.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8f27c7df4f38048c, processorArchitecture=MSIL" />
+    <Reference Include="Xydc.Platform.SystemFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7c891532145bd82b, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="areaContent.aspx" />
+    <Content Include="areaFoot.aspx" />
+    <Content Include="areaLeft.aspx" />
+    <Content Include="areaTop.aspx" />
+    <Content Include="areaTopLogo.aspx" />
+    <Content Include="bannerTitle.ascx" />
+    <Content Include="css\border-radius.css" />
+    <Content Include="css\gold\brushed-steel.jpg" />
+    <Content Include="css\gold\coolbg.png" />
+    <Content Include="css\gold\gold.css" />
+    <Content Include="css\gold\gold.jpg" />
+    <Content Include="css\img\cool-bg-hard-inv.png" />
+    <Content Include="css\img\cool-bg-hard.png" />
+    <Content Include="css\img\cool-bg-inv.png" />
+    <Content Include="css\img\cool-bg.png" />
+    <Content Include="css\img\drop-down.gif" />
+    <Content Include="css\img\drop-up.gif" />
+    <Content Include="css\img\nav-left-x2.gif" />
+    <Content Include="css\img\nav-left.gif" />
+    <Content Include="css\img\nav-right-x2.gif" />
+    <Content Include="css\img\nav-right.gif" />
+    <Content Include="css\img\time-down.png" />
+    <Content Include="css\img\time-up.png" />
+    <Content Include="css\jscal2.css" />
+    <Content Include="css\matrix\matrix.css" />
+    <Content Include="css\matrix\nav-left-x2.gif" />
+    <Content Include="css\matrix\nav-left.gif" />
+    <Content Include="css\matrix\nav-right-x2.gif" />
+    <Content Include="css\matrix\nav-right.gif" />
+    <Content Include="css\reduce-spacing.css" />
+    <Content Include="css\shadow-b.png" />
+    <Content Include="css\steel\brushed-steel.jpg" />
+    <Content Include="css\steel\brushed-steel.png" />
+    <Content Include="css\steel\brushed-steel1.jpg" />
+    <Content Include="css\steel\coolbg.png" />
+    <Content Include="css\steel\steel.css" />
+    <Content Include="css\steel\steel.jpg" />
+    <Content Include="css\win2k\win2k.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="fullscreen.aspx" />
+    <Content Include="images\ACCESS.ICO" />
+    <Content Include="images\alert.ICO" />
+    <Content Include="images\ARWDN.ICO" />
+    <Content Include="images\ARWLT.GIF" />
+    <Content Include="images\ARWRT.GIF" />
+    <Content Include="images\ARWUP.ICO" />
+    <Content Include="images\AUTO.ICO" />
+    <Content Include="images\AUTOXH.gif" />
+    <Content Include="images\BACK.ICO" />
+    <Content Include="images\bannerlogo.jpg" />
+    <Content Include="images\bannerlogo1.jpg" />
+    <Content Include="images\bannerslice_left..jpg" />
+    <Content Include="images\bannerslice_left.gif" />
+    <Content Include="images\bannerslice_left.jpg" />
+    <Content Include="images\bannerslice_right.gif" />
+    <Content Include="images\bannerslice_right.jpg" />
+    <Content Include="images\bar001.jpg" />
+    <Content Include="images\bar002.jpg" />
+    <Content Include="images\bgfoot.gif" />
+    <Content Include="images\bgmain.gif" />
+    <Content Include="images\bgtitle.gif" />
+    <Content Include="images\CLEAR.ICO" />
+    <Content Include="images\CLOSE.GIF" />
+    <Content Include="images\COPY.GIF" />
+    <Content Include="images\CUT.GIF" />
+    <Content Include="images\DELETE.GIF" />
+    <Content Include="images\EXPORT.ICO" />
+    <Content Include="images\FIND.GIF" />
+    <Content Include="images\front.jpg" />
+    <Content Include="images\GDJWH.ico" />
+    <Content Include="images\GEDIT.ico" />
+    <Content Include="images\GFFWJ.ico" />
+    <Content Include="images\GFHSJ.ICO" />
+    <Content Include="images\GJXBL.ICO" />
+    <Content Include="images\GLIST.GIF" />
+    <Content Include="images\GOTO.ICO" />
+    <Content Include="images\GQSYJ.ICO" />
+    <Content Include="images\GQYWJ.ico" />
+    <Content Include="images\GRANT.ICO" />
+    <Content Include="images\GSAVE.gif" />
+    <Content Include="images\GUNDO.gif" />
+    <Content Include="images\GWBYB.ICO" />
+    <Content Include="images\GWJBJ.ICO" />
+    <Content Include="images\GWJBY.ICO" />
+    <Content Include="images\GWJCB.ICO" />
+    <Content Include="images\GWJCK.gif" />
+    <Content Include="images\GWJDB.ICO" />
+    <Content Include="images\GWJDR.ICO" />
+    <Content Include="images\GWJDY.gif" />
+    <Content Include="images\GWJFS.ICO" />
+    <Content Include="images\GWJFX.ICO" />
+    <Content Include="images\GWJJG.ICO" />
+    <Content Include="images\GWJJS.ICO" />
+    <Content Include="images\GWJSH.ICO" />
+    <Content Include="images\GWJTH.ICO" />
+    <Content Include="images\GWJZF.ico" />
+    <Content Include="images\GWYBW.ICO" />
+    <Content Include="images\GWYYD.ICO" />
+    <Content Include="images\GYZDJ.ICO" />
+    <Content Include="images\GZHBL.ICO" />
+    <Content Include="images\HELP.GIF" />
+    <Content Include="images\IMPORT.ICO" />
+    <Content Include="images\item001.gif" />
+    <Content Include="images\item002.gif" />
+    <Content Include="images\item003.gif" />
+    <Content Include="images\item004.gif" />
+    <Content Include="images\item005.gif" />
+    <Content Include="images\item006.gif" />
+    <Content Include="images\item007.gif" />
+    <Content Include="images\menu01\arrow.gif" />
+    <Content Include="images\menu01\break.gif" />
+    <Content Include="images\menu01\item_bg.gif" />
+    <Content Include="images\menu01\menu01.png" />
+    <Content Include="images\menu01\menu02.png" />
+    <Content Include="images\menu01\top_item_bg.gif" />
+    <Content Include="images\menu01\top_item_bg2.gif" />
+    <Content Include="images\MODIFY.ICO" />
+    <Content Include="images\MOVEIN.ICO" />
+    <Content Include="images\MOVEOUT.ICO" />
+    <Content Include="images\NEW.GIF" />
+    <Content Include="images\OK.ICO" />
+    <Content Include="images\OPEN.GIF" />
+    <Content Include="images\passbk.jpg" />
+    <Content Include="images\read.gif" />
+    <Content Include="images\readno.gif" />
+    <Content Include="images\REFRESH.ICO" />
+    <Content Include="images\REVOKE.ICO" />
+    <Content Include="images\SPACER.GIF" />
+    <Content Include="images\USER.ICO" />
+    <Content Include="images\USERS.ICO" />
+    <Content Include="images\yj\bg_title.gif" />
+    <Content Include="images\yj\titleicon.gif" />
+    <Content Include="index.aspx" />
+    <Content Include="info_button0.aspx" />
+    <Content Include="info_button3.aspx" />
+    <Content Include="leftblank.aspx" />
+    <Content Include="lockuser.aspx" />
+    <Content Include="filecss\mnuStyle.css" />
+    <Content Include="filecss\mnuStyle01.css" />
+    <Content Include="secure\logout.aspx" />
+    <Content Include="navData.xml" />
+    <Content Include="filecss\navStyle.css" />
+    <Content Include="rightblank.aspx" />
+    <Content Include="scripts\Calendar.js" />
+    <Content Include="scripts\htmledit.js" />
+    <Content Include="scripts\js\jscal2.js" />
+    <Content Include="scripts\js\lang\ca.js" />
+    <Content Include="scripts\js\lang\cn.js" />
+    <Content Include="scripts\js\lang\cz.js" />
+    <Content Include="scripts\js\lang\de.js" />
+    <Content Include="scripts\js\lang\en.js" />
+    <Content Include="scripts\js\lang\es.js" />
+    <Content Include="scripts\js\lang\fr.js" />
+    <Content Include="scripts\js\lang\it.js" />
+    <Content Include="scripts\js\lang\jp.js" />
+    <Content Include="scripts\js\lang\nl.js" />
+    <Content Include="scripts\js\lang\pl.js" />
+    <Content Include="scripts\js\lang\pt.js" />
+    <Content Include="scripts\js\lang\ro.js" />
+    <Content Include="scripts\js\lang\ru.js" />
+    <Content Include="scripts\js\lang\sv.js" />
+    <Content Include="scripts\libcookie.js" />
+    <Content Include="scripts\libdate.js" />
+    <Content Include="scripts\libstring.js" />
+    <Content Include="scripts\libword.js" />
+    <Content Include="scripts\showdateweek.js" />
+    <Content Include="scripts\transkey.js" />
+    <Content Include="secure\applock.aspx" />
+    <Content Include="secure\appunlock.aspx" />
+    <Content Include="secure\appunlocksuccess.aspx" />
+    <Content Include="secure\bmry\ggdm_bmry.aspx" />
+    <Content Include="filecss\StyleGW.css" />
+    <Content Include="filecss\stylePerson.css" />
+    <Content Include="filecss\styles.css" />
+    <Content Include="filecss\styles01.css" />
+    <Content Include="filecss\stylesGZL.css" />
+    <Content Include="filecss\stylesw.css" />
+    <Content Include="secure\login.aspx" />
+    <Content Include="secure\main.aspx" />
+    <Content Include="secure\modifypwd.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="areaContent.aspx.designer.vb">
+      <DependentUpon>areaContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="areaContent.aspx.vb">
+      <DependentUpon>areaContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="areaFoot.aspx.designer.vb">
+      <DependentUpon>areaFoot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="areaFoot.aspx.vb">
+      <DependentUpon>areaFoot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="areaLeft.aspx.designer.vb">
+      <DependentUpon>areaLeft.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="areaLeft.aspx.vb">
+      <DependentUpon>areaLeft.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="areaTop.aspx.designer.vb">
+      <DependentUpon>areaTop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="areaTop.aspx.vb">
+      <DependentUpon>areaTop.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="areaTopLogo.aspx.designer.vb">
+      <DependentUpon>areaTopLogo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="areaTopLogo.aspx.vb">
+      <DependentUpon>areaTopLogo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="bannerTitle.ascx.designer.vb">
+      <DependentUpon>bannerTitle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="bannerTitle.ascx.vb">
+      <DependentUpon>bannerTitle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="class\controlProcess.vb" />
+    <Compile Include="class\datagridProcess.vb" />
+    <Compile Include="class\dropDownListProcess.vb" />
+    <Compile Include="class\listboxProcess.vb" />
+    <Compile Include="class\messageProcess.vb" />
+    <Compile Include="class\radioButtonListProcess.vb" />
+    <Compile Include="class\repeatorProcess.vb" />
+    <Compile Include="class\treeviewProcess.vb" />
+    <Compile Include="Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fullscreen.aspx.designer.vb">
+      <DependentUpon>fullscreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fullscreen.aspx.vb">
+      <DependentUpon>fullscreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="info_button0.aspx.designer.vb">
+      <DependentUpon>info_button0.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="info_button0.aspx.vb">
+      <DependentUpon>info_button0.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="info_button3.aspx.designer.vb">
+      <DependentUpon>info_button3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="info_button3.aspx.vb">
+      <DependentUpon>info_button3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="leftblank.aspx.designer.vb">
+      <DependentUpon>leftblank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="leftblank.aspx.vb">
+      <DependentUpon>leftblank.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="lockuser.aspx.designer.vb">
+      <DependentUpon>lockuser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lockuser.aspx.vb">
+      <DependentUpon>lockuser.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\bmry\ggdm_bmry_bmxx.aspx.designer.vb">
+      <DependentUpon>ggdm_bmry_bmxx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\bmry\ggdm_bmry_bmxx.aspx.vb">
+      <DependentUpon>ggdm_bmry_bmxx.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\bmry\ggdm_bmry_infoedit.aspx.designer.vb">
+      <DependentUpon>ggdm_bmry_infoedit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\bmry\ggdm_bmry_infoedit.aspx.vb">
+      <DependentUpon>ggdm_bmry_infoedit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\bmry\ggdm_bmry_ryxx.aspx.designer.vb">
+      <DependentUpon>ggdm_bmry_ryxx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\bmry\ggdm_bmry_ryxx.aspx.vb">
+      <DependentUpon>ggdm_bmry_ryxx.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\customer\customer_ageratio.aspx.designer.vb">
+      <DependentUpon>customer_ageratio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\customer\customer_ageratio.aspx.vb">
+      <DependentUpon>customer_ageratio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\customer\customer_detail.aspx.designer.vb">
+      <DependentUpon>customer_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\customer\customer_detail.aspx.vb">
+      <DependentUpon>customer_detail.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\customer\customer_detail_medium.aspx.designer.vb">
+      <DependentUpon>customer_detail_medium.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\customer\customer_detail_medium.aspx.vb">
+      <DependentUpon>customer_detail_medium.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\customer\customer_medium_typechoice.aspx.designer.vb">
+      <DependentUpon>customer_medium_typechoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\customer\customer_medium_typechoice.aspx.vb">
+      <DependentUpon>customer_medium_typechoice.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\depthData\configuration\deepData_BuildingArea_interval.aspx.designer.vb">
+      <DependentUpon>deepData_BuildingArea_interval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\depthData\configuration\deepData_BuildingArea_interval.aspx.vb">
+      <DependentUpon>deepData_BuildingArea_interval.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\depthData\compute\deepData_detail.aspx.designer.vb">
+      <DependentUpon>deepData_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\depthData\compute\deepData_detail.aspx.vb">
+      <DependentUpon>deepData_detail.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\depthData\compute\deepData_detailCompute.aspx.designer.vb">
+      <DependentUpon>deepData_detailCompute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\depthData\compute\deepData_detailCompute.aspx.vb">
+      <DependentUpon>deepData_detailCompute.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\depthData\configuration\deepData_FloorArea_interval.aspx.designer.vb">
+      <DependentUpon>deepData_FloorArea_interval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\depthData\configuration\deepData_FloorArea_interval.aspx.vb">
+      <DependentUpon>deepData_FloorArea_interval.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\depthData\compute\deepData_monthCompute.aspx.designer.vb">
+      <DependentUpon>deepData_monthCompute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\depthData\compute\deepData_monthCompute.aspx.vb">
+      <DependentUpon>deepData_monthCompute.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\depthData\configuration\deepData_TotalPrice_interval.aspx.designer.vb">
+      <DependentUpon>deepData_TotalPrice_interval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\depthData\configuration\deepData_TotalPrice_interval.aspx.vb">
+      <DependentUpon>deepData_TotalPrice_interval.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\depthData\configuration\deepData_UnitPrice_interval.aspx.designer.vb">
+      <DependentUpon>deepData_UnitPrice_interval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\depthData\configuration\deepData_UnitPrice_interval.aspx.vb">
+      <DependentUpon>deepData_UnitPrice_interval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secure\customer\search_match.aspx.designer.vb">
+      <DependentUpon>search_match.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\customer\search_match.aspx.vb">
+      <DependentUpon>search_match.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\dmxz\dmxz_gzgw.aspx.designer.vb">
+      <DependentUpon>dmxz_gzgw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\dmxz\dmxz_gzgw.aspx.vb">
+      <DependentUpon>dmxz_gzgw.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\dmxz\dmxz_jbdm.aspx.designer.vb">
+      <DependentUpon>dmxz_jbdm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\dmxz\dmxz_jbdm.aspx.vb">
+      <DependentUpon>dmxz_jbdm.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\dmxz\dmxz_zzjg.aspx.designer.vb">
+      <DependentUpon>dmxz_zzjg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\dmxz\dmxz_zzjg.aspx.vb">
+      <DependentUpon>dmxz_zzjg.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\dmxz\dmxz_zzry.aspx.designer.vb">
+      <DependentUpon>dmxz_zzry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\dmxz\dmxz_zzry.aspx.vb">
+      <DependentUpon>dmxz_zzry.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\logout.aspx.designer.vb">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\logout.aspx.vb">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="person.vb" />
+    <Compile Include="rightblank.aspx.designer.vb">
+      <DependentUpon>rightblank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rightblank.aspx.vb">
+      <DependentUpon>rightblank.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\applock.aspx.designer.vb">
+      <DependentUpon>applock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\applock.aspx.vb">
+      <DependentUpon>applock.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\appunlock.aspx.designer.vb">
+      <DependentUpon>appunlock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\appunlock.aspx.vb">
+      <DependentUpon>appunlock.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\appunlocksuccess.aspx.designer.vb">
+      <DependentUpon>appunlocksuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\appunlocksuccess.aspx.vb">
+      <DependentUpon>appunlocksuccess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\bmry\ggdm_bmry.aspx.designer.vb">
+      <DependentUpon>ggdm_bmry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\bmry\ggdm_bmry.aspx.vb">
+      <DependentUpon>ggdm_bmry.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secure\main.aspx.designer.vb">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\main.aspx.vb">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\modifypwd.aspx.designer.vb">
+      <DependentUpon>modifypwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\modifypwd.aspx.vb">
+      <DependentUpon>modifypwd.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sjcx\sjcx_cxtj.aspx.designer.vb">
+      <DependentUpon>sjcx_cxtj.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sjcx\sjcx_cxtj.aspx.vb">
+      <DependentUpon>sjcx_cxtj.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\configuration\sunshineData_houseAveragePrice_compute.aspx.designer.vb">
+      <DependentUpon>sunshineData_houseAveragePrice_compute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\configuration\sunshineData_houseAveragePrice_compute.aspx.vb">
+      <DependentUpon>sunshineData_houseAveragePrice_compute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\configuration\sunhineData_House_Sort.aspx.designer.vb">
+      <DependentUpon>sunhineData_House_Sort.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\configuration\sunhineData_House_Sort.aspx.vb">
+      <DependentUpon>sunhineData_House_Sort.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\configuration\sunshineData_buildingVerify.aspx.designer.vb">
+      <DependentUpon>sunshineData_buildingVerify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\configuration\sunshineData_buildingVerify.aspx.vb">
+      <DependentUpon>sunshineData_buildingVerify.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\compute\sunshineData_houseInfo_compute.aspx.designer.vb">
+      <DependentUpon>sunshineData_houseInfo_compute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\compute\sunshineData_houseInfo_compute.aspx.vb">
+      <DependentUpon>sunshineData_houseInfo_compute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\configuration\sunshineData_MonthMatchHouse.aspx.designer.vb">
+      <DependentUpon>sunshineData_MonthMatchHouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\configuration\sunshineData_MonthMatchHouse.aspx.vb">
+      <DependentUpon>sunshineData_MonthMatchHouse.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\compute\sunshineData_nWeek_compute.aspx.designer.vb">
+      <DependentUpon>sunshineData_nWeek_compute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\compute\sunshineData_nWeek_compute.aspx.vb">
+      <DependentUpon>sunshineData_nWeek_compute.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\compute\sunshineData_RegionInfo_compute.aspx.designer.vb">
+      <DependentUpon>sunshineData_RegionInfo_compute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\compute\sunshineData_RegionInfo_compute.aspx.vb">
+      <DependentUpon>sunshineData_RegionInfo_compute.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\compute\sunshineData_weekInfo_compute.aspx.designer.vb">
+      <DependentUpon>sunshineData_weekInfo_compute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\compute\sunshineData_weekInfo_compute.aspx.vb">
+      <DependentUpon>sunshineData_weekInfo_compute.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\configuration\sunshineData_WeekMatchHouse.aspx.designer.vb">
+      <DependentUpon>sunshineData_WeekMatchHouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\configuration\sunshineData_WeekMatchHouse.aspx.vb">
+      <DependentUpon>sunshineData_WeekMatchHouse.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\configuration\sunshineData_buildingVerify_x2.aspx.designer.vb">
+      <DependentUpon>sunshineData_buildingVerify_x2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\configuration\sunshineData_buildingVerify_x2.aspx.vb">
+      <DependentUpon>sunshineData_buildingVerify_x2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\daycompute\sunshineData_houseInfo_compute_v2.aspx.designer.vb">
+      <DependentUpon>sunshineData_houseInfo_compute_v2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\daycompute\sunshineData_houseInfo_compute_v2.aspx.vb">
+      <DependentUpon>sunshineData_houseInfo_compute_v2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\daycompute\sunshineData_nWeek_compute_v2.aspx.designer.vb">
+      <DependentUpon>sunshineData_nWeek_compute_v2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\daycompute\sunshineData_nWeek_compute_v2.aspx.vb">
+      <DependentUpon>sunshineData_nWeek_compute_v2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\daycompute\sunshineData_RegionInfo_compute_v2.aspx.designer.vb">
+      <DependentUpon>sunshineData_RegionInfo_compute_v2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\daycompute\sunshineData_RegionInfo_compute_v2.aspx.vb">
+      <DependentUpon>sunshineData_RegionInfo_compute_v2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\daycompute\sunshineData_weekInfo_compute_v2.aspx.designer.vb">
+      <DependentUpon>sunshineData_weekInfo_compute_v2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\daycompute\sunshineData_weekInfo_compute_v2.aspx.vb">
+      <DependentUpon>sunshineData_weekInfo_compute_v2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\dayhousecompute\sunshineData_houseDetail_compute.aspx.designer.vb">
+      <DependentUpon>sunshineData_houseDetail_compute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\dayhousecompute\sunshineData_houseDetail_compute.aspx.vb">
+      <DependentUpon>sunshineData_houseDetail_compute.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\dayhousecompute\sunshineData_houseInfo_compute_v3.aspx.designer.vb">
+      <DependentUpon>sunshineData_houseInfo_compute_v3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\dayhousecompute\sunshineData_houseInfo_compute_v3.aspx.vb">
+      <DependentUpon>sunshineData_houseInfo_compute_v3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\dayhousecompute\sunshineData_nWeek_compute_v3.aspx.designer.vb">
+      <DependentUpon>sunshineData_nWeek_compute_v3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\dayhousecompute\sunshineData_nWeek_compute_v3.aspx.vb">
+      <DependentUpon>sunshineData_nWeek_compute_v3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\dayhousecompute\sunshineData_RegionInfo_compute_v3.aspx.designer.vb">
+      <DependentUpon>sunshineData_RegionInfo_compute_v3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\dayhousecompute\sunshineData_RegionInfo_compute_v3.aspx.vb">
+      <DependentUpon>sunshineData_RegionInfo_compute_v3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshineData\dayhousecompute\sunshineData_weekInfo_compute_v3.aspx.designer.vb">
+      <DependentUpon>sunshineData_weekInfo_compute_v3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshineData\dayhousecompute\sunshineData_weekInfo_compute_v3.aspx.vb">
+      <DependentUpon>sunshineData_weekInfo_compute_v3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshine\sunshineData_houseInfo_compute.aspx.designer.vb">
+      <DependentUpon>sunshineData_houseInfo_compute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshine\sunshineData_houseInfo_compute.aspx.vb">
+      <DependentUpon>sunshineData_houseInfo_compute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshine\sunshineData_MonthMatchHouse.aspx.designer.vb">
+      <DependentUpon>sunshineData_MonthMatchHouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshine\sunshineData_MonthMatchHouse.aspx.vb">
+      <DependentUpon>sunshineData_MonthMatchHouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshine\sunshineData_RegionInfo_compute.aspx.designer.vb">
+      <DependentUpon>sunshineData_RegionInfo_compute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshine\sunshineData_RegionInfo_compute.aspx.vb">
+      <DependentUpon>sunshineData_RegionInfo_compute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshine\sunshineData_weekInfo_compute_x2.aspx.designer.vb">
+      <DependentUpon>sunshineData_weekInfo_compute_x2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshine\sunshineData_weekInfo_compute_x2.aspx.vb">
+      <DependentUpon>sunshineData_weekInfo_compute_x2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\sunshine\sunshineData_WeekMatchHouse_x2.aspx.designer.vb">
+      <DependentUpon>sunshineData_WeekMatchHouse_x2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\sunshine\sunshineData_WeekMatchHouse_x2.aspx.vb">
+      <DependentUpon>sunshineData_WeekMatchHouse_x2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\userinfo.aspx.designer.vb">
+      <DependentUpon>userinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\userinfo.aspx.vb">
+      <DependentUpon>userinfo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_mkgl.aspx.designer.vb">
+      <DependentUpon>xtgl_mkgl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_mkgl.aspx.vb">
+      <DependentUpon>xtgl_mkgl.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_mkgl_info.aspx.designer.vb">
+      <DependentUpon>xtgl_mkgl_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_mkgl_info.aspx.vb">
+      <DependentUpon>xtgl_mkgl_info.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_mkqx_js.aspx.designer.vb">
+      <DependentUpon>xtgl_mkqx_js.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_mkqx_js.aspx.vb">
+      <DependentUpon>xtgl_mkqx_js.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_mkqx_yh.aspx.designer.vb">
+      <DependentUpon>xtgl_mkqx_yh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_mkqx_yh.aspx.vb">
+      <DependentUpon>xtgl_mkqx_yh.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_rzgl_jcrz.aspx.designer.vb">
+      <DependentUpon>xtgl_rzgl_jcrz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_rzgl_jcrz.aspx.vb">
+      <DependentUpon>xtgl_rzgl_jcrz.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_rz_aq.aspx.designer.vb">
+      <DependentUpon>xtgl_rz_aq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_rz_aq.aspx.vb">
+      <DependentUpon>xtgl_rz_aq.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_rz_cz.aspx.designer.vb">
+      <DependentUpon>xtgl_rz_cz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_rz_cz.aspx.vb">
+      <DependentUpon>xtgl_rz_cz.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_rz_fw.aspx.designer.vb">
+      <DependentUpon>xtgl_rz_fw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_rz_fw.aspx.vb">
+      <DependentUpon>xtgl_rz_fw.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_rz_pz.aspx.designer.vb">
+      <DependentUpon>xtgl_rz_pz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_rz_pz.aspx.vb">
+      <DependentUpon>xtgl_rz_pz.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_rz_sj.aspx.designer.vb">
+      <DependentUpon>xtgl_rz_sj.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_rz_sj.aspx.vb">
+      <DependentUpon>xtgl_rz_sj.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjdx.aspx.designer.vb">
+      <DependentUpon>xtgl_sjdx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjdx.aspx.vb">
+      <DependentUpon>xtgl_sjdx.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjdx_fwq.aspx.designer.vb">
+      <DependentUpon>xtgl_sjdx_fwq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjdx_fwq.aspx.vb">
+      <DependentUpon>xtgl_sjdx_fwq.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjdx_sjk.aspx.designer.vb">
+      <DependentUpon>xtgl_sjdx_sjk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjdx_sjk.aspx.vb">
+      <DependentUpon>xtgl_sjdx_sjk.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjdx_sjkdx.aspx.designer.vb">
+      <DependentUpon>xtgl_sjdx_sjkdx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjdx_sjkdx.aspx.vb">
+      <DependentUpon>xtgl_sjdx_sjkdx.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjqx_cq.aspx.designer.vb">
+      <DependentUpon>xtgl_sjqx_cq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjqx_cq.aspx.vb">
+      <DependentUpon>xtgl_sjqx_cq.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjqx_js.aspx.designer.vb">
+      <DependentUpon>xtgl_sjqx_js.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjqx_js.aspx.vb">
+      <DependentUpon>xtgl_sjqx_js.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjqx_yh.aspx.designer.vb">
+      <DependentUpon>xtgl_sjqx_yh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_sjqx_yh.aspx.vb">
+      <DependentUpon>xtgl_sjqx_yh.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_wjzh.aspx.designer.vb">
+      <DependentUpon>xtgl_wjzh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_wjzh.aspx.vb">
+      <DependentUpon>xtgl_wjzh.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_yhgl_js.aspx.designer.vb">
+      <DependentUpon>xtgl_yhgl_js.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_yhgl_js.aspx.vb">
+      <DependentUpon>xtgl_yhgl_js.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_yhgl_yh.aspx.designer.vb">
+      <DependentUpon>xtgl_yhgl_yh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtgl\xtgl_yhgl_yh.aspx.vb">
+      <DependentUpon>xtgl_yhgl_yh.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtpz\xtpz_bdkz.aspx.designer.vb">
+      <DependentUpon>xtpz_bdkz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtpz\xtpz_bdkz.aspx.vb">
+      <DependentUpon>xtpz_bdkz.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtpz\xtpz_dbsz.aspx.designer.vb">
+      <DependentUpon>xtpz_dbsz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtpz\xtpz_dbsz.aspx.vb">
+      <DependentUpon>xtpz_dbsz.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="secure\xtpz\xtpz_xtcs.aspx.designer.vb">
+      <DependentUpon>xtpz_xtcs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secure\xtpz\xtpz_xtcs.aspx.vb">
+      <DependentUpon>xtpz_xtcs.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="superControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superPage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="filecss\chatStyle.css" />
+    <Content Include="filecss\styleChat.css" />
+    <Content Include="filecss\StyleMnuGrsw.css" />
+    <Content Include="filecss\StyleMnuGW.css" />
+    <Content Include="filecss\StyleMnuMain.css" />
+    <Content Include="filecss\stylesGrsw.css" />
+    <Content Include="filecss\styles_dzgg_fj.css" />
+    <Content Include="filecss\styles_dzgg_fj1.css" />
+    <Content Include="images\welcome02\gzgg_bottom.jpg" />
+    <Content Include="images\welcome02\gzgg_left.jpg" />
+    <Content Include="images\welcome02\gzgg_right.jpg" />
+    <Content Include="images\welcome02\gzgg_top.jpg" />
+    <Content Include="scripts\CalendarYearandMonth.js" />
+    <Content Include="secure\bmry\ggdm_bmry_bmxx.aspx" />
+    <Content Include="secure\bmry\ggdm_bmry_infoedit.aspx" />
+    <Content Include="secure\bmry\ggdm_bmry_ryxx.aspx" />
+    <Content Include="secure\customer\customer_ageratio.aspx" />
+    <Content Include="secure\customer\customer_detail.aspx" />
+    <Content Include="secure\customer\customer_detail_medium.aspx" />
+    <Content Include="secure\customer\customer_medium_typechoice.aspx" />
+    <Content Include="secure\depthData\configuration\deepData_BuildingArea_interval.aspx" />
+    <Content Include="secure\depthData\compute\deepData_detail.aspx" />
+    <Content Include="secure\depthData\compute\deepData_detailCompute.aspx" />
+    <Content Include="secure\depthData\configuration\deepData_FloorArea_interval.aspx" />
+    <Content Include="secure\depthData\compute\deepData_monthCompute.aspx" />
+    <Content Include="secure\depthData\configuration\deepData_TotalPrice_interval.aspx" />
+    <Content Include="secure\depthData\configuration\deepData_UnitPrice_interval.aspx" />
+    <Content Include="secure\customer\search_match.aspx" />
+    <Content Include="secure\dmxz\dmxz_gzgw.aspx" />
+    <Content Include="secure\dmxz\dmxz_jbdm.aspx" />
+    <Content Include="secure\dmxz\dmxz_zzjg.aspx" />
+    <Content Include="secure\dmxz\dmxz_zzry.aspx" />
+    <Content Include="secure\sjcx\sjcx_cxtj.aspx" />
+    <Content Include="secure\sunshineData\configuration\sunshineData_houseAveragePrice_compute.aspx" />
+    <Content Include="secure\sunshineData\configuration\sunhineData_House_Sort.aspx" />
+    <Content Include="secure\sunshineData\configuration\sunshineData_buildingVerify.aspx" />
+    <Content Include="secure\sunshineData\compute\sunshineData_houseInfo_compute.aspx" />
+    <Content Include="secure\sunshineData\configuration\sunshineData_MonthMatchHouse.aspx" />
+    <Content Include="secure\sunshineData\compute\sunshineData_nWeek_compute.aspx" />
+    <Content Include="secure\sunshineData\compute\sunshineData_RegionInfo_compute.aspx" />
+    <Content Include="secure\sunshineData\compute\sunshineData_weekInfo_compute.aspx" />
+    <Content Include="secure\sunshineData\configuration\sunshineData_WeekMatchHouse.aspx" />
+    <Content Include="secure\sunshineData\configuration\sunshineData_buildingVerify_x2.aspx" />
+    <Content Include="secure\sunshineData\daycompute\sunshineData_houseInfo_compute_v2.aspx" />
+    <Content Include="secure\sunshineData\daycompute\sunshineData_nWeek_compute_v2.aspx" />
+    <Content Include="secure\sunshineData\daycompute\sunshineData_RegionInfo_compute_v2.aspx" />
+    <Content Include="secure\sunshineData\daycompute\sunshineData_weekInfo_compute_v2.aspx" />
+    <Content Include="secure\sunshineData\dayhousecompute\sunshineData_houseDetail_compute.aspx" />
+    <Content Include="secure\sunshineData\dayhousecompute\sunshineData_houseInfo_compute_v3.aspx" />
+    <Content Include="secure\sunshineData\dayhousecompute\sunshineData_nWeek_compute_v3.aspx" />
+    <Content Include="secure\sunshineData\dayhousecompute\sunshineData_RegionInfo_compute_v3.aspx" />
+    <Content Include="secure\sunshineData\dayhousecompute\sunshineData_weekInfo_compute_v3.aspx" />
+    <Content Include="secure\sunshine\sunshineData_houseInfo_compute.aspx" />
+    <Content Include="secure\sunshine\sunshineData_MonthMatchHouse.aspx" />
+    <Content Include="secure\sunshine\sunshineData_RegionInfo_compute.aspx" />
+    <Content Include="secure\sunshine\sunshineData_weekInfo_compute_x2.aspx" />
+    <Content Include="secure\sunshine\sunshineData_WeekMatchHouse_x2.aspx" />
+    <Content Include="secure\userinfo.aspx" />
+    <Content Include="secure\xtgl\xtgl_mkgl.aspx" />
+    <Content Include="secure\xtgl\xtgl_mkgl_info.aspx" />
+    <Content Include="secure\xtgl\xtgl_mkqx_js.aspx" />
+    <Content Include="secure\xtgl\xtgl_mkqx_yh.aspx" />
+    <Content Include="secure\xtgl\xtgl_rzgl_jcrz.aspx" />
+    <Content Include="secure\xtgl\xtgl_rz_aq.aspx" />
+    <Content Include="secure\xtgl\xtgl_rz_cz.aspx" />
+    <Content Include="secure\xtgl\xtgl_rz_fw.aspx" />
+    <Content Include="secure\xtgl\xtgl_rz_pz.aspx" />
+    <Content Include="secure\xtgl\xtgl_rz_sj.aspx" />
+    <Content Include="secure\xtgl\xtgl_sjdx.aspx" />
+    <Content Include="secure\xtgl\xtgl_sjdx_fwq.aspx" />
+    <Content Include="secure\xtgl\xtgl_sjdx_sjk.aspx" />
+    <Content Include="secure\xtgl\xtgl_sjdx_sjkdx.aspx" />
+    <Content Include="secure\xtgl\xtgl_sjqx_cq.aspx" />
+    <Content Include="secure\xtgl\xtgl_sjqx_js.aspx" />
+    <Content Include="secure\xtgl\xtgl_sjqx_yh.aspx" />
+    <Content Include="secure\xtgl\xtgl_wjzh.aspx" />
+    <Content Include="secure\xtgl\xtgl_yhgl_js.aspx" />
+    <Content Include="secure\xtgl\xtgl_yhgl_yh.aspx" />
+    <Content Include="secure\xtpz\xtpz_bdkz.aspx" />
+    <Content Include="secure\xtpz\xtpz_dbsz.aspx" />
+    <Content Include="secure\xtpz\xtpz_xtcs.aspx" />
+    <Content Include="secure\Web.config" />
+    <Content Include="Web.config" />
+    <None Include="xszx.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1183</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/webapp/xszx/web</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

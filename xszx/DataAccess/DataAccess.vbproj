@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{271925AD-D42F-4526-B55B-CBAB2142EDC5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>Xydc.Platform.DataAccess</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>Off</OptionInfer>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>xszx.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\web\bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41998,42004,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\web\bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41998,42004,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GemBox.ExcelLite, Version=23.1.5000.1000, Culture=neutral, PublicKeyToken=358b0bb27b60b246" />
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft Visual Studio 9.0\Visual Studio Tools for Office\PIA\Office12\stdole.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Xydc.Net.FtpWebRequest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=979beb151d6a11a4, processorArchitecture=MSIL" />
+    <Reference Include="Xydc.Platform.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=70a9c1086133436f, processorArchitecture=MSIL" />
+    <Reference Include="Xydc.Platform.SystemFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7c891532145bd82b, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customer\dacCustomer_operation.vb" />
+    <Compile Include="dacCommon.vb" />
+    <Compile Include="dacCustomer.vb" />
+    <Compile Include="DEEPDATA\dacDeepdata.vb" />
+    <Compile Include="DRDC\dacAccess.vb" />
+    <Compile Include="DRDC\dacExcel.vb" />
+    <Compile Include="FLOW\dacFlowCreate.vb" />
+    <Compile Include="FLOW\dacFlowObject.vb" />
+    <Compile Include="GGDM\dacGongzuogangwei.vb" />
+    <Compile Include="GGDM\dacXingzhengjibie.vb" />
+    <Compile Include="GGXX\dacDianzigonggao.vb" />
+    <Compile Include="GGXX\dacGonggongziyuan.vb" />
+    <Compile Include="GGXX\dacGuizhangzhidu.vb" />
+    <Compile Include="GGXX\dacLingdaoanpai.vb" />
+    <Compile Include="GGXX\dacLuntan.vb" />
+    <Compile Include="GGXX\dacSijuzhanganpai.vb" />
+    <Compile Include="GRSW\dacMyCalender.vb" />
+    <Compile Include="GRSW\dacMyJiaotan.vb" />
+    <Compile Include="GRSW\dacMyLiuyan.vb" />
+    <Compile Include="GRSW\dacMyOpinion.vb" />
+    <Compile Include="GRSW\dacMyTask.vb" />
+    <Compile Include="GRSW\dacMyTongxinlu.vb" />
+    <Compile Include="GWDM\dacFenfafanwei.vb" />
+    <Compile Include="GWDM\dacJingchanglianxiren.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="QZBJ\dacEditWorkFlow.vb" />
+    <Compile Include="SUNSHINEDDATA\dacSunshine.vb" />
+    <Compile Include="SUNSHINEDDATA\dacSunshine_x2.vb" />
+    <Compile Include="XTGL\dacAppManager.vb" />
+    <Compile Include="XTPZ\dacBudengshezhi.vb" />
+    <Compile Include="XTPZ\dacDubanshezhi.vb" />
+    <Compile Include="XTPZ\dacXitongpeizhi.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="xszx.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

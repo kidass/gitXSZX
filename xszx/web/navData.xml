@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<items>
+  <item Text="系统主页" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="true">
+    <item Text="欢迎页面" ClientSideCommand="openWindow('areaContent.aspx');" />
+    <item Text="用户信息" ClientSideCommand="openWindow('./secure/userinfo.aspx');" />
+    <item Text="更改密码" ClientSideCommand="openWindow('./secure/modifypwd.aspx');" />
+    <item Text="退出系统" ClientSideCommand="closeWindow();" />
+  </item>
+
+  <item Text="办公桌面" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="false" ClientSideCommand="openWindow('./secure/grsw/grsw_wdsy.aspx');"/>
+
+  <item Text="个人事务" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="false">
+    <item Text="我的各类工作" ClientSideCommand="openWindow('./secure/grsw/grsw_wdsy.aspx');" />
+    <item Text="我的局内来文" ClientSideCommand="openWindow('./secure/grsw/grsw_nbff.aspx');" />
+    <item Text="我的委托留言" ClientSideCommand="openWindow('./secure/grsw/grsw_lkly.aspx');" />
+    <item Text="我的常用意见" ClientSideCommand="openWindow('./secure/grsw/grsw_cyyj.aspx');" />
+    <item Text="我的日程安排" ClientSideCommand="openWindow('./secure/grsw/grsw_rcap_month.aspx');" />
+    <item Text="我的通信录"   ClientSideCommand="openWindow('./secure/grsw/grsw_tongxinlu.aspx');" />
+    <item Text="即时信息交流" ClientSideCommand="openChat();" />
+  </item>
+
+  <item Text="公文管理" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="false">
+    <item Text="文号发放情况" ClientSideCommand="openWindow('./secure/gwgl/gwgl_fwgl_whffqk.aspx');" />
+    <item Text="印章使用情况" ClientSideCommand="openWindow('./secure/gwgl/gwgl_fwgl_yzsyqk.aspx');" />
+    <item Text="公文运转监控" ClientSideCommand="openWindow('./secure/gwgl/gwgl_gwjk.aspx');" />
+  </item>
+
+  <item Text="会议管理" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="false">
+    <item Text="管理会议目录" ClientSideCommand="openWindow('./secure/hygl/hygl_hyml.aspx');" />
+    <item Text="管理会议主题" ClientSideCommand="openWindow('./secure/hygl/hygl_hyzt_dy.aspx');" />
+    <item Text="管理会议资料" ClientSideCommand="openWindow('./secure/hygl/hygl_hyml_hyzl.aspx');" />
+    <item Text="发放会议通知" ClientSideCommand="openWindow('./secure/hygl/hygl_hyml_fftz.aspx');" />
+    <item Text="答复会议通知" ClientSideCommand="openWindow('./secure/hygl/hygl_hyml_tzcl.aspx');" />
+    <item Text="会议座席安排" ClientSideCommand="openWindow('./secure/hygl/hygl_hyml_zxap.aspx');" />
+    <item Text="参会人员签到" ClientSideCommand="openWindow('./secure/hygl/hygl_hyml_hyqd.aspx');" />
+    <item Text="会议发言记录" ClientSideCommand="openWindow('./secure/hygl/hygl_hyml_hyjl.aspx');" />
+    <item Text="管理会议纪要" ClientSideCommand="openWindow('./secure/hygl/hygl_hyml_hyjy.aspx');" />
+  </item>
+
+  <item Text="档案管理" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="false">
+    <item Text="档案检索处理" ClientSideCommand="openWindow('./secure/dagl/dagl_search_a.aspx');" />
+    <item Text="档案编目处理" ClientSideCommand="openWindow('./secure/dagl/dagl_dabm.aspx');" />
+    <item Text="档案辅助编目" ClientSideCommand="openWindow('./secure/dagl/dagl_fzlj.aspx');" />
+    <item Text="档案封存解封" ClientSideCommand="openWindow('./secure/dagl/dagl_fcgl.aspx');" />
+    <item Text="档案开放回收" ClientSideCommand="openWindow('./secure/dagl/dagl_kfgl.aspx');" />
+    <item Text="档案借阅归还" ClientSideCommand="openWindow('./secure/dagl/dagl_jieyue.aspx');" />
+    <item Text="档案移交接收" ClientSideCommand="openWindow('./secure/dagl/dagl_yijiao.aspx');" />
+    <item Text="档案销毁恢复" ClientSideCommand="openWindow('./secure/dagl/dagl_xiaohui.aspx');" />
+    <item Text="档案转移恢复" ClientSideCommand="openWindow('./secure/dagl/dagl_zhuanyi.aspx');" />
+    <item Text="档案常用范围" ClientSideCommand="openWindow('./secure/dagl/dagl_cyfw.aspx');" />
+    <item Text="档案权限设置" ClientSideCommand="openWindow('./secure/dagl/dagl_qxgl.aspx');" />
+  </item>
+
+  <item Text="信息出版" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="false">
+    <item Text="信息投稿管理" ClientSideCommand="openWindow('./secure/xxcb/xxcb_tougao.aspx');" />
+    <item Text="旅游信息管理" ClientSideCommand="openWindow('./secure/xxcb/xxcb_lyxx.aspx');" />
+    <item Text="旅游要闻管理" ClientSideCommand="openWindow('./secure/xxcb/xxcb_lyyw.aspx');" />
+    <item Text="司局简报管理" ClientSideCommand="openWindow('./secure/xxcb/xxcb_jianbao.aspx');" />
+    <item Text="值班简报管理" ClientSideCommand="openWindow('./secure/xxcb/xxcb_zbjb.aspx');" />
+    <item Text="一周要情管理" ClientSideCommand="openWindow('./secure/xxcb/xxcb_yzyq.aspx');" />
+    <item Text="旅游统计快讯" ClientSideCommand="openWindow('./secure/xxcb/xxcb_lytjkx.aspx');" />
+    <item Text="阅读电子刊物" ClientSideCommand="openWindow('./secure/xxcb/xxcb_nbff.aspx');" />
+  </item>
+
+  <item Text="公共信息" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="false">
+    <item Text="领导活动安排" ClientSideCommand="openWindow('./secure/ggxx/ggxx_ldap.aspx');" />
+    <item Text="阅读电子公告" ClientSideCommand="openWindow('./secure/ggxx/ggxx_dzgg_read.aspx');" />
+    <item Text="发布电子公告" ClientSideCommand="openWindow('./secure/ggxx/ggxx_dzgg_fabu.aspx');" />
+    <item Text="资源栏目设置" ClientSideCommand="openWindow('./secure/ggxx/ggxx_ggzy_zylm.aspx');" />
+    <item Text="浏览公共资源" ClientSideCommand="openWindow('./secure/ggxx/ggxx_ggzy_read.aspx');" />
+    <item Text="发布公共资源" ClientSideCommand="openWindow('./secure/ggxx/ggxx_ggzy_fabu.aspx');" />
+    <item Text="论坛用户注册" ClientSideCommand="openWindow('./secure/ggxx/ggxx_nblt_zcgl.aspx');" />
+    <item Text="进入内部论坛" ClientSideCommand="openWindow('./secure/ggxx/ggxx_nblt_ltzy.aspx');" />
+    <item Text="论坛后台管理" ClientSideCommand="openWindow('./secure/ggxx/ggxx_nblt_htgl.aspx');" />
+    <item Text="单位规章制度" ClientSideCommand="openWindow('./secure/ggxx/ggxx_gzzd.aspx');" />
+  </item>
+
+  <item Text="代码管理" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="false">
+    <item Text="行政级别" ClientSideCommand="openWindow('./secure/dmgl/ggdm_xzjb.aspx');" />
+    <item Text="岗位设置" ClientSideCommand="openWindow('./secure/dmgl/ggdm_gwsz.aspx');" />
+    <item Text="紧急程度" ClientSideCommand="openWindow('./secure/gwdm/gwdm_jjcd.aspx');" />
+    <item Text="秘密等级" ClientSideCommand="openWindow('./secure/gwdm/gwdm_mmdj.aspx');" />
+    <item Text="机关代字" ClientSideCommand="openWindow('./secure/gwdm/gwdm_jgdz.aspx');" />
+    <item Text="文件介质" ClientSideCommand="openWindow('./secure/gwdm/gwdm_wjjz.aspx');" />
+    <item Text="文件种类" ClientSideCommand="openWindow('./secure/gwdm/gwdm_wjzl.aspx');" />
+    <item Text="文件分类" ClientSideCommand="openWindow('./secure/gwdm/gwdm_wjfl.aspx');" />
+    <item Text="主 题 词" ClientSideCommand="openWindow('./secure/gwdm/gwdm_ztc.aspx');" />
+    <item Text="印章目录" ClientSideCommand="openWindow('./secure/gwdm/gwdm_yzml.aspx');" />
+  </item>
+
+  <item Text="档案代码" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="false">
+    <item Text="档案载体" ClientSideCommand="openWindow('./secure/dadm/dadm_dazt.aspx');" />
+    <item Text="保管期限" ClientSideCommand="openWindow('./secure/dadm/dadm_bgqx.aspx');" />
+    <item Text="存放地点" ClientSideCommand="openWindow('./secure/dadm/dadm_cfdd.aspx');" />
+    <item Text="收发代码" ClientSideCommand="openWindow('./secure/dadm/dadm_sfdm.aspx');" />
+    <item Text="档案分类" ClientSideCommand="openWindow('./secure/dadm/dadm_dafl.aspx');" />
+    <item Text="文件类型" ClientSideCommand="openWindow('./secure/dadm/dadm_wjlx.aspx');" />
+  </item>
+
+  <item Text="系统配置" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="false">
+    <item Text="运行参数" ClientSideCommand="openWindow('./secure/xtpz/xtpz_xtcs.aspx');" />
+    <item Text="单位人员" ClientSideCommand="openWindow('./secure/bmry/ggdm_bmry.aspx');" />
+    <item Text="常用范围" ClientSideCommand="openWindow('./secure/gwdm/gwdm_cyfw.aspx');" />
+    <item Text="督办控制" ClientSideCommand="openWindow('./secure/xtpz/xtpz_dbsz.aspx');" />
+    <item Text="补登控制" ClientSideCommand="openWindow('./secure/xtpz/xtpz_bdkz.aspx');" />
+  </item>
+
+  <item Text="系统管理" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="false">
+    <item Text="数据对象" ClientSideCommand="openWindow('./secure/xtgl/xtgl_sjdx.aspx');" />
+    <item Text="用户管理" ClientSideCommand="openWindow('./secure/xtgl/xtgl_yhgl_yh.aspx');" />
+    <item Text="数据授权" ClientSideCommand="openWindow('./secure/xtgl/xtgl_sjqx_js.aspx');" />
+    <item Text="模块管理" ClientSideCommand="openWindow('./secure/xtgl/xtgl_mkgl.aspx');" />
+    <item Text="模块授权" ClientSideCommand="openWindow('./secure/xtgl/xtgl_mkqx_js.aspx');" />
+    <item Text="在线用户" ClientSideCommand="openWindow('./secure/xtgl/xtgl_rzgl_zxyh.aspx');" />
+    <item Text="进出日志" ClientSideCommand="openWindow('./secure/xtgl/xtgl_rzgl_jcrz.aspx');" />
+    <item Text="用户日志" ClientSideCommand="openWindow('./secure/xtgl/xtgl_rz_cz.aspx');" />
+    <item Text="访问审计" ClientSideCommand="openWindow('./secure/xtgl/xtgl_rz_fw.aspx');" />
+    <item Text="安全审计" ClientSideCommand="openWindow('./secure/xtgl/xtgl_rz_aq.aspx');" />
+    <item Text="配置审计" ClientSideCommand="openWindow('./secure/xtgl/xtgl_rz_pz.aspx');" />
+    <item Text="审计日志" ClientSideCommand="openWindow('./secure/xtgl/xtgl_rz_sj.aspx');" />
+    <item Text="文件转换" ClientSideCommand="openWindow('./secure/xtgl/xtgl_wjzh.aspx');" />
+  </item>
+
+  <item Text="使用说明" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="false">
+    <item Text="局领导用" ClientSideCommand="openWindow('./public/helpdoc/help_julingdao.mht');" />
+    <item Text="司领导用" ClientSideCommand="openWindow('./public/helpdoc/help_silingdao.mht');" />
+    <item Text="秘 书 用" ClientSideCommand="openWindow('./public/helpdoc/help_mishu.mht');" />
+    <item Text="司 秘 用" ClientSideCommand="openWindow('./public/helpdoc/help_simi.mht');" />
+    <item Text="其他人员" ClientSideCommand="openWindow('./public/helpdoc/help_qitarenyuan.mht');" />
+  </item>
+
+  <item Text="组件安装" DefaultSubItemLookId="Level2ItemLook" SelectedLookId="TopItemLook" SubGroupCssClass="Level2Group" Expanded="false">
+    <item Text="文档组件"  ClientSideCommand="openWindow('./cabs/jsoffice.exe');" />
+    <item Text="条码组件"  ClientSideCommand="openWindow('./cabs/pdf417.exe');" />
+    <item Text="通讯组件"  ClientSideCommand="openWindow('./cabs/mscomm32.exe');" />
+    <item Text="PDF阅读器" ClientSideCommand="openWindow('./cabs/AdbeRdr708_zh_CN.exe');" />
+    <item Text="IE6安装包" ClientSideCommand="openWindow('./cabs/ie6.zip');" />
+  </item>
+</items>

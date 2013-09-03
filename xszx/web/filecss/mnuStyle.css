@@ -1,0 +1,115 @@
+.MenuBar
+{
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    
+    background-color: #6699cc;
+
+    width:100%;
+} 
+
+
+
+.MenuItem
+{
+	padding-right: 4px;
+	padding-left: 4px;
+	padding-bottom: 4px;
+	padding-top: 4px; 
+	
+	background-color: #6699cc; 
+	border: solid 1px #6699cc;
+	color: yellow; 
+
+	font-family:宋体; 
+	font-size:12px; 
+
+	cursor:hand;
+}
+
+.MenuItemHover
+{
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+
+    border-right: #6699cc 2px outset;
+    border-top: #6699cc 2px outset;
+    border-left: #6699cc 2px outset;
+    border-bottom: #6699cc 2px outset;
+
+    background-color: #6699cc;
+    color: red;
+    
+    font-family: 宋体;
+    font-size: 12px;
+
+    cursor:hand;
+}
+
+.MenuItemSelected
+{
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+
+    border-right: #6699cc 2px inset;
+    border-top: #6699cc 2px inset;
+    border-left: #6699cc 2px inset;
+    border-bottom: #6699cc 2px inset;
+
+    background-color: #006600;
+    color: yellow;
+    
+    font-family: 宋体;
+    font-size: 12px;
+
+    cursor:wait;
+}
+
+.MenuItemChildSelected
+{
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+
+    border-right: #6699cc 2px inset;
+    border-top: #6699cc 2px inset;
+    border-left: #6699cc 2px inset;
+    border-bottom: #6699cc 2px inset;
+
+    background-color: #6699cc;
+    color: yellow;
+
+    font-family: 宋体;
+    font-size: 12px;
+    text-indent: 12px;
+
+    cursor:wait;
+}
+
+.MenuItemDisabled
+{
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-bottom: 4px;
+    padding-top: 4px; 
+
+    border-right: Silver 2px inset;
+    border-top: Silver 2px inset;
+    border-left: Silver 2px inset;
+    border-bottom: Silver 2px inset;
+
+    background-color:Silver;
+    color:Gray;
+    
+    font-family: 宋体;
+    font-size: 12px;
+
+    cursor:auto;
+}

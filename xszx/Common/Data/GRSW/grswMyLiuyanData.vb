@@ -1,0 +1,185 @@
+'----------------------------------------------------------------
+' Copyright (C) 2006-2016 Josco Software Corporation
+' All rights reserved.
+'
+' This source code is intended only as a supplement to Microsoft
+' Development Tools and/or on-line documentation. See these other
+' materials for detailed information regarding Microsoft code samples.
+'
+' THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY 
+' OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT 
+' LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR 
+' FITNESS FOR A PARTICULAR PURPOSE.
+'----------------------------------------------------------------
+Option Strict On
+Option Explicit On 
+
+Imports System
+Imports System.Data
+Imports System.Runtime.Serialization
+
+Namespace Xydc.Platform.Common.Data
+
+    '----------------------------------------------------------------
+    ' 命名空间：Xydc.Platform.Common.Data
+    ' 类名    ：grswMyLiuyanData
+    '
+    ' 功能描述：
+    '     定义“个人_B_我的事宜”表有关的数据访问格式
+    '----------------------------------------------------------------
+    <System.ComponentModel.DesignerCategory("Code"), SerializableAttribute()> Public Class grswMyLiuyanData
+        Inherits System.Data.DataSet
+
+        '“个人_B_离开留言”表信息定义
+        '表名称
+        Public Const TABLE_GR_B_LIKAILIUYAN As String = "个人_B_离开留言"
+        '字段序列
+        Public Const FIELD_GR_B_LIKAILIUYAN_BS As String = "标识"
+        Public Const FIELD_GR_B_LIKAILIUYAN_LYR As String = "留言人"
+        Public Const FIELD_GR_B_LIKAILIUYAN_LYRQ As String = "留言日期"
+        Public Const FIELD_GR_B_LIKAILIUYAN_SXRQ As String = "生效日期"
+        Public Const FIELD_GR_B_LIKAILIUYAN_ZFRQ As String = "失效日期"
+        Public Const FIELD_GR_B_LIKAILIUYAN_WTDLR As String = "委托代理人"
+        Public Const FIELD_GR_B_LIKAILIUYAN_LYNR As String = "留言内容"
+        '约束错误信息
+
+
+
+
+
+
+
+
+        '定义初始化表类型enum
+        Public Enum enumTableType
+            GR_B_LIKAILIUYAN = 1
+        End Enum
+
+
+
+
+
+
+
+
+
+        '----------------------------------------------------------------
+        ' 构造函数
+        '----------------------------------------------------------------
+        Private Sub New(ByVal info As SerializationInfo, ByVal context As StreamingContext)
+            MyBase.New(info, context)
+        End Sub
+
+        '----------------------------------------------------------------
+        ' 构造函数
+        '----------------------------------------------------------------
+        Public Sub New()
+            MyBase.New()
+        End Sub
+
+        '----------------------------------------------------------------
+        ' 构造函数
+        '----------------------------------------------------------------
+        Public Sub New(ByVal objenumTableType As enumTableType)
+            MyBase.New()
+            Try
+                Dim objDataTable As System.Data.DataTable
+                Dim strErrMsg As String
+                objDataTable = Me.createDataTables(strErrMsg, objenumTableType)
+                If Not (objDataTable Is Nothing) Then
+                    Me.Tables.Add(objDataTable)
+                End If
+            Catch ex As Exception
+            End Try
+
+        End Sub
+
+        '----------------------------------------------------------------
+        ' 安全释放本身资源
+        '----------------------------------------------------------------
+        Public Shared Sub SafeRelease(ByRef obj As Xydc.Platform.Common.Data.grswMyLiuyanData)
+            Try
+                If Not (obj Is Nothing) Then
+                    obj.Dispose()
+                End If
+            Catch ex As Exception
+            End Try
+            obj = Nothing
+        End Sub
+
+
+
+
+
+
+
+
+
+        '----------------------------------------------------------------
+        '将给定DataTable加入到DataSet中
+        '----------------------------------------------------------------
+        Public Function appendDataTable(ByVal table As System.Data.DataTable) As String
+
+            Dim strErrMsg As String = ""
+
+            Try
+                Me.Tables.Add(table)
+            Catch ex As Exception
+                strErrMsg = ex.Message
+            End Try
+
+            appendDataTable = strErrMsg
+
+        End Function
+
+        '----------------------------------------------------------------
+        '根据指定类型创建dataTable
+        '----------------------------------------------------------------
+        Public Function createDataTables( _
+            ByRef strErrMsg As String, _
+            ByVal enumType As enumTableType) As System.Data.DataTable
+
+            Dim table As System.Data.DataTable
+
+            Select Case enumType
+                Case enumTableType.GR_B_LIKAILIUYAN
+                    table = createDataTables_MyLikailiuyan(strErrMsg)
+                Case Else
+                    strErrMsg = "无效的表类型！"
+                    table = Nothing
+            End Select
+
+            createDataTables = table
+
+        End Function
+
+        '----------------------------------------------------------------
+        '创建TABLE_GR_B_LIKAILIUYAN
+        '----------------------------------------------------------------
+        Private Function createDataTables_MyLikailiuyan(ByRef strErrMsg As String) As System.Data.DataTable
+
+            Dim table As System.Data.DataTable
+
+            Try
+                table = New DataTable(TABLE_GR_B_LIKAILIUYAN)
+                With table.Columns
+                    .Add(FIELD_GR_B_LIKAILIUYAN_BS, GetType(System.Int32))
+                    .Add(FIELD_GR_B_LIKAILIUYAN_LYR, GetType(System.String))
+                    .Add(FIELD_GR_B_LIKAILIUYAN_LYRQ, GetType(System.DateTime))
+                    .Add(FIELD_GR_B_LIKAILIUYAN_SXRQ, GetType(System.DateTime))
+                    .Add(FIELD_GR_B_LIKAILIUYAN_ZFRQ, GetType(System.DateTime))
+                    .Add(FIELD_GR_B_LIKAILIUYAN_WTDLR, GetType(System.String))
+                    .Add(FIELD_GR_B_LIKAILIUYAN_LYNR, GetType(System.String))
+                End With
+            Catch ex As Exception
+                strErrMsg = ex.Message
+                table = Nothing
+            End Try
+
+            createDataTables_MyLikailiuyan = table
+
+        End Function
+
+    End Class 'grswMyLiuyanData
+
+End Namespace 'Xydc.Platform.Common.Data

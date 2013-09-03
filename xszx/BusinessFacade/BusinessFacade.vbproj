@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C3F4E797-F1A6-459E-8416-A7EE9BAD8232}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>Xydc.Platform.BusinessFacade</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>Off</OptionInfer>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>xszx.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\web\bin</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41998,42004,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\web\bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41998,42004,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Xydc.Net.FtpWebRequest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=979beb151d6a11a4, processorArchitecture=MSIL" />
+    <Reference Include="Xydc.Platform.BusinessRules, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1c51255e0c337df3, processorArchitecture=MSIL" />
+    <Reference Include="Xydc.Platform.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=70a9c1086133436f, processorArchitecture=MSIL" />
+    <Reference Include="Xydc.Platform.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8f27c7df4f38048c, processorArchitecture=MSIL" />
+    <Reference Include="Xydc.Platform.SystemFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7c891532145bd82b, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DEEPDATA\systemDeepdata.vb" />
+    <Compile Include="FLOW\systemFlowObject.vb" />
+    <Compile Include="FLOW\systemFlowObjectCreate.vb" />
+    <Compile Include="GGDM\systemGongzuogangwei.vb" />
+    <Compile Include="GGDM\systemXingzhengjibie.vb" />
+    <Compile Include="GGXX\systemDianzigonggao.vb" />
+    <Compile Include="GGXX\systemGonggongziyuan.vb" />
+    <Compile Include="GGXX\systemGuizhangzhidu.vb" />
+    <Compile Include="GGXX\systemLingdaoanpai.vb" />
+    <Compile Include="GGXX\systemLuntan.vb" />
+    <Compile Include="GGXX\systemSijuzhanganpai.vb" />
+    <Compile Include="GRSW\systemMyCalender.vb" />
+    <Compile Include="GRSW\systemMyJiaotan.vb" />
+    <Compile Include="GRSW\systemMyLiuyan.vb" />
+    <Compile Include="GRSW\systemMyOpinion.vb" />
+    <Compile Include="GRSW\systemMyTask.vb" />
+    <Compile Include="GRSW\systemMyTongxinlu.vb" />
+    <Compile Include="GWDM\systemFenfafanwei.vb" />
+    <Compile Include="GWDM\systemJingchanglianxiren.vb" />
+    <Compile Include="Interface\Call\Bmry\iGgdmBmry.vb" />
+    <Compile Include="Interface\Call\Bmry\iGgdmBmryBmxx.vb" />
+    <Compile Include="Interface\Call\Bmry\iGgdmBmryRyxx.vb" />
+    <Compile Include="Interface\Call\Chat\iChatLsxx.vb" />
+    <Compile Include="Interface\Call\DeepData\IDeepData_monthCompute.vb" />
+    <Compile Include="Interface\Call\Dmxz\iDmxzGzgw.vb" />
+    <Compile Include="Interface\Call\Dmxz\iDmxzJbdm.vb" />
+    <Compile Include="Interface\Call\Dmxz\iDmxzZclb.vb" />
+    <Compile Include="Interface\Call\Dmxz\iDmxzZtc.vb" />
+    <Compile Include="Interface\Call\Dmxz\iDmxzZzjg.vb" />
+    <Compile Include="Interface\Call\Dmxz\iDmxzZzry.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowBjyj.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowBycl.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowByqk.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowCkcbqk.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowCkdbqk.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowCuiban.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowCzrz.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowDuban.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowDubanjg.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowEditWord.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowFujian.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowFujianInfo.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowImportQP.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowImportZS.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowLzqk.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowReceive.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowSend.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowShouhui.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowSpyj.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowSpyjtx.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowTuihui.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowXgwj.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowXgwjfjInfo.vb" />
+    <Compile Include="Interface\Call\Flow\iFlowXgwjljAdd.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxDmxzZylm.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxDzggFabu.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxDzggFabuInfo.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxDzggRead.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxFujian.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxFujianInfo.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxGgzyFabu.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxGgzyFabuInfo.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxGgzyRead.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxGgzyZylmInfo.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxGzzd.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxGzzdInfo.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxLdap.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxLdapInfo.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxNbltHtgl.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxNbltLtzy.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxNbltLtzyInfo.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxNbltZttl.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxSjap.vb" />
+    <Compile Include="Interface\Call\Ggxx\iGgxxSjapInfo.vb" />
+    <Compile Include="Interface\Call\Grsw\iGrswCyyj.vb" />
+    <Compile Include="Interface\Call\Grsw\iGrswJieshou.vb" />
+    <Compile Include="Interface\Call\Grsw\iGrswLkly.vb" />
+    <Compile Include="Interface\Call\Grsw\iGrswNbff.vb" />
+    <Compile Include="Interface\Call\Grsw\iGrswRcapDay.vb" />
+    <Compile Include="Interface\Call\Grsw\iGrswRcapInfo.vb" />
+    <Compile Include="Interface\Call\Grsw\iGrswRcapList.vb" />
+    <Compile Include="Interface\Call\Grsw\iGrswRcapMonth.vb" />
+    <Compile Include="Interface\Call\Grsw\iGrswRcapWeek.vb" />
+    <Compile Include="Interface\Call\Grsw\iGrswWtxl.vb" />
+    <Compile Include="Interface\Call\Grsw\iGrswWtxlInfo.vb" />
+    <Compile Include="Interface\Call\Grsw\iGrswYijiao.vb" />
+    <Compile Include="Interface\Call\Gwdm\iGwdmCyfw.vb" />
+    <Compile Include="Interface\Call\Gwdm\iGwdmJgdz.vb" />
+    <Compile Include="Interface\Call\Gwdm\iGwdmJjcd.vb" />
+    <Compile Include="Interface\Call\Gwdm\iGwdmMmdj.vb" />
+    <Compile Include="Interface\Call\Gwdm\iGwdmWjfl.vb" />
+    <Compile Include="Interface\Call\Gwdm\iGwdmWjjz.vb" />
+    <Compile Include="Interface\Call\Gwdm\iGwdmWjzl.vb" />
+    <Compile Include="Interface\Call\Gwdm\iGwdmYzml.vb" />
+    <Compile Include="Interface\Call\Gwdm\iGwdmZtc.vb" />
+    <Compile Include="Interface\Call\iModifyPwd.vb" />
+    <Compile Include="Interface\Call\Qzbj\iQzbjWorkFlowJjxx.vb" />
+    <Compile Include="Interface\Call\Qzbj\iQzbjWorkFlowList.vb" />
+    <Compile Include="Interface\Call\Qzbj\iQzbjWorkFlowSpxx.vb" />
+    <Compile Include="Interface\Call\Sjcx\iSjcxCxtj.vb" />
+    <Compile Include="Interface\Call\Super\iCallInterface.vb" />
+    <Compile Include="Interface\Call\Xtgl\iXtglMkgl.vb" />
+    <Compile Include="Interface\Call\Xtgl\iXtglMkglInfo.vb" />
+    <Compile Include="Interface\Call\Xtgl\iXtglMkqxJs.vb" />
+    <Compile Include="Interface\Call\Xtgl\iXtglMkqxYh.vb" />
+    <Compile Include="Interface\Call\Xtgl\iXtglSjdx.vb" />
+    <Compile Include="Interface\Call\Xtgl\iXtglSjdxFwq.vb" />
+    <Compile Include="Interface\Call\Xtgl\iXtglSjdxSjk.vb" />
+    <Compile Include="Interface\Call\Xtgl\iXtglSjdxSjkdx.vb" />
+    <Compile Include="Interface\Call\Xtgl\iXtglSjqxCq.vb" />
+    <Compile Include="Interface\Call\Xtgl\iXtglSjqxJs.vb" />
+    <Compile Include="Interface\Call\Xtgl\iXtglSjqxYh.vb" />
+    <Compile Include="Interface\Call\Xtgl\iXtglYhglJs.vb" />
+    <Compile Include="Interface\Call\Xtgl\iXtglYhglYh.vb" />
+    <Compile Include="Interface\Self\Bmry\iMGgdmBmry.vb" />
+    <Compile Include="Interface\Self\Bmry\iMGgdmBmryBmxx.vb" />
+    <Compile Include="Interface\Self\Bmry\iMGgdmBmryRyxx.vb" />
+    <Compile Include="Interface\Self\Chat\iMChatFsxx.vb" />
+    <Compile Include="Interface\Self\Chat\iMChatLsxx.vb" />
+    <Compile Include="Interface\Self\DeepData\IMDeepData_monthCompute.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowBjyj.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowBycl.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowByqk.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowCkcbqk.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowCkdbqk.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowCuiban.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowCzrz.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowDuban.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowDubanjg.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowEditWord.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowFujian.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowFujianInfo.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowImportQP.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowImportZS.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowLzqk.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowReceive.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowSend.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowShouhui.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowSpyj.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowSpyjtx.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowTuihui.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowXgwj.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowXgwjfjInfo.vb" />
+    <Compile Include="Interface\Self\Flow\iMFlowXgwjljAdd.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxDzggFabu.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxDzggFabuInfo.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxDzggRead.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxFujian.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxGgzyFabu.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxGgzyFabuInfo.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxGgzyRead.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxGgzyZylm.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxGgzyZylmInfo.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxGzzd.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxGzzdInfo.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxLdap.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxLdapInfo.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxNbltHtgl.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxNbltLtzy.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxNbltLtzyInfo.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxNbltZttl.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxSjap.vb" />
+    <Compile Include="Interface\Self\Ggxx\iMGgxxSjapInfo.vb" />
+    <Compile Include="Interface\Self\Grsw\iMGrswCyyj.vb" />
+    <Compile Include="Interface\Self\Grsw\iMGrswJieshou.vb" />
+    <Compile Include="Interface\Self\Grsw\iMGrswLkly.vb" />
+    <Compile Include="Interface\Self\Grsw\iMGrswNbff.vb" />
+    <Compile Include="Interface\Self\Grsw\iMGrswRcapDay.vb" />
+    <Compile Include="Interface\Self\Grsw\iMGrswRcapInfo.vb" />
+    <Compile Include="Interface\Self\Grsw\iMGrswRcapList.vb" />
+    <Compile Include="Interface\Self\Grsw\iMGrswRcapMonth.vb" />
+    <Compile Include="Interface\Self\Grsw\iMGrswRcapWeek.vb" />
+    <Compile Include="Interface\Self\Grsw\iMGrswWdsy.vb" />
+    <Compile Include="Interface\Self\Grsw\iMGrswWtxl.vb" />
+    <Compile Include="Interface\Self\Grsw\iMGrswWtxlInfo.vb" />
+    <Compile Include="Interface\Self\Grsw\iMGrswYijiao.vb" />
+    <Compile Include="Interface\Self\Gwdm\iMGwdmJgdz.vb" />
+    <Compile Include="Interface\Self\Qzbj\iMQzbjWorkFlowJjxx.vb" />
+    <Compile Include="Interface\Self\Qzbj\iMQzbjWorkFlowList.vb" />
+    <Compile Include="Interface\Self\Qzbj\iMQzbjWorkFlowSpxx.vb" />
+    <Compile Include="Interface\Self\Sjcx\iMSjcxCxtj.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglMkgl.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglMkglInfo.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglMkqxJs.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglMkqxYh.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglRzAq.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglRzCz.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglRzFw.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglRzglJcrz.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglRzglZxyh.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglRzPz.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglRzSj.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglSjdx.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglSjdxFwq.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglSjdxSjk.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglSjdxSjkdx.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglSjqxCq.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglSjqxJs.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglSjqxYh.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglYhglJs.vb" />
+    <Compile Include="Interface\Self\Xtgl\iMXtglYhglYh.vb" />
+    <Compile Include="Interface\Self\Xtpz\iMXtpzBdkz.vb" />
+    <Compile Include="Interface\Self\Xtpz\iMXtpzDbsz.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="QZBJ\systemEditWorkFlow.vb" />
+    <Compile Include="SUNSHINEDDATA\systemSunshine.vb" />
+    <Compile Include="SUNSHINEDDATA\systemSunshine_x2.vb" />
+    <Compile Include="systemCommon.vb" />
+    <Compile Include="systemCustomer.vb" />
+    <Compile Include="XTGL\systemAppManager.vb" />
+    <Compile Include="XTPZ\systemBudengshezhi.vb" />
+    <Compile Include="XTPZ\systemDubanshezhi.vb" />
+    <Compile Include="XTPZ\systemXitongpeizhi.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GGXX\systemSijuzhanganpai.resx">
+      <DependentUpon>systemSijuzhanganpai.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="xszx.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

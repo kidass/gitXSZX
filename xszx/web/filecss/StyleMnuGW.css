@@ -1,0 +1,67 @@
+.TopGroup
+{
+  background-image: url(images/menu01/top_item_bg.gif); 
+  cursor:default; 
+}
+
+.MenuGroup
+{
+  background-color:#2872DB;
+  border:1px black solid; 
+  cursor:default; 
+}
+
+.TopMenuItem
+{
+  color:white; 
+  font-family:宋体;
+  font-size:14px; 
+  cursor:hand; 
+}
+
+.TopMenuItemHover 
+{
+  background-image: url(images/menu01/top_item_bg2.gif);
+  color:white; 
+  font-family:宋体; 
+  font-size:14px; 
+  cursor:hand; 
+}
+
+.MenuItem
+{
+  color:white;
+  font-family:宋体; 
+  font-size:14px; 
+  cursor:hand; 
+}
+
+.MenuItemHover 
+{
+  background-color:#99ccff; 
+  color:red;
+  font-family:宋体; 
+  font-size:14px; 
+  cursor:hand; 
+}
+
+.MenuItemDisabled 
+{
+  color:#9C9C9C;
+  font-family:宋体; 
+  font-size:14px; 
+  cursor:default; 
+}
+
+.MenuBreak
+{
+  background-image:url(images/menu01/break.gif);
+  width:100%;
+  height:1px;
+}
+.MenuBreakV
+{
+  background-image:url(images/menu01/breakV.jpg);
+  width:1px;
+  height:100%;
+}

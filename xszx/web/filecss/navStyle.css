@@ -1,0 +1,132 @@
+.NavBar
+{
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    
+    background-color: #006699;
+} 
+
+
+
+.TopItem
+{
+	padding-right: 5px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+
+	background-color:#006699; 
+	border:solid 1px #006699;
+	color:yellow; 
+
+	font-family:宋体; 
+	font-size:12px; 
+
+	cursor:pointer;
+
+	width:100%;
+}
+
+.TopItemHover
+{
+    padding-right: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+    border-right: #6699ff 2px outset;
+    border-top: #6699ff 2px outset;
+    border-left: #6699ff 2px outset;
+    border-bottom: #6699ff 2px outset;
+
+    background-color: #006699;
+    color: red;
+    
+    font-size: 12px;
+    font-family: 宋体;
+
+    cursor: pointer;
+}
+
+.TopItemActive
+{
+    padding-right: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+    background-color: #006699;
+    color: yellow;
+    
+    font-size: 12px;
+    font-family: 宋体;
+
+    cursor: pointer;
+}
+
+
+
+
+.Level2Item
+{
+    padding-right: 0px;
+    padding-left: 2px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    
+    font-size: 12px;
+    text-indent: 12px;
+    font-family: 宋体;
+
+    color: white;
+    
+    cursor: hand;
+}
+
+.Level2ItemHover
+{
+    padding-right: 0px;
+    padding-left: 2px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    
+    font-size: 12px;
+    text-indent: 12px;
+    font-family: tahoma, 宋体;
+    text-decoration: underline;
+    
+    color: red;
+
+    cursor: hand;
+}
+
+.Level2ItemSelected
+{
+    padding-right: 0px;
+    padding-left: 2px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+
+    font-size: 12px;
+    text-indent: 12px;
+    font-family: tahoma, 宋体;
+
+    background-color: #003399;
+    color: yellow;
+
+    cursor: hand;
+}
+
+.Level2Group
+{
+    border-right: #3399ff 2px inset;
+    border-top: #3399ff 2px inset;
+    border-left: #3399ff 2px inset;
+    border-bottom: #3399ff 2px inset;
+
+    background-color: #6699FF;
+
+    width: 100%;
+}

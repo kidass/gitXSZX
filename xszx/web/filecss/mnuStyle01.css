@@ -1,0 +1,68 @@
+.TopGroup
+{
+  background-color:#008899; 
+  background-image: url(../images/menu01/top_item_bg.gif);
+  border:1px #8394AC solid; 
+  cursor:default; 
+}
+
+.MenuGroup
+{
+  background-color:#F5F5F5;
+  border:1px black solid; 
+  border-style:solid;
+  cursor:default; 
+}
+
+.TopMenuItem
+{
+  background-color:#000000;
+  color:white; 
+  font-family:宋体; 
+  font-size:12px; 
+  border:1px #5A6B7D solid;
+  cursor:hand; 
+}
+
+.TopMenuItemHover 
+{
+  background-color:#000000; 
+  background-image: url(../images/menu01/top_item_bg2.gif);
+  color:white; 
+  font-family:宋体; 
+  font-size:12px; 
+  border:1px #000000 solid;
+  cursor:hand; 
+}
+
+.MenuItem
+{
+  color:#00025C;
+  font-family:宋体; 
+  font-size:12px; 
+  cursor:hand; 
+}
+
+.MenuItemHover 
+{
+  background-color:#99ccff; 
+  color:#00025C;
+  font-family:宋体; 
+  font-size:12px; 
+  cursor:hand; 
+}
+
+.MenuItemDisabled 
+{
+  color:gray;
+  font-family:宋体; 
+  font-size:12px; 
+  cursor:default; 
+}
+
+.MenuBreak
+{
+  background-image:url(../images/menu01/break_bg.gif);
+  width:100%;
+  height:2px;
+}

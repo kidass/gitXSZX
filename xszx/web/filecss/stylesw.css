@@ -1,0 +1,269 @@
+/* 新 Web 应用程序项目的默认 CSS Stylesheet */
+BODY
+{
+    background-color: white;
+    font-family: 宋体;
+    font-size: 11pt;
+    font-weight:normal;
+    letter-spacing:normal;
+    text-transform:none;
+    word-spacing:normal;
+}
+
+H1, H2, H3, H4, H5, TH, THEAD, TFOOT
+{
+    color: #003366;
+}
+H1
+{
+    font-family: 宋体;
+    font-size: 24pt;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+H2
+{
+    font-family: 宋体;
+    font-size: 20pt;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+H3
+{
+    font-family: 宋体;
+    font-size: 18pt;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+H4
+{
+    font-family: 宋体;
+    font-size: 16pt;
+    font-weight: 500;
+    text-decoration: none;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+H5, DT
+{
+    font-family: 宋体;
+    font-size: 14pt;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+H6
+{
+    font-family: 宋体;
+    font-size: 11pt;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+TFOOT, THEAD
+{
+    font-size: 11pt;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    font-family: 宋体;
+}
+
+TH
+{
+    vertical-align: baseline;
+    font-size: 11pt;
+    font-weight: bold;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    font-family: 宋体;
+    color:Yellow;
+}
+
+TD
+{
+    font-family: 宋体;
+    font-size: 11pt;
+    color: black;
+}
+
+
+A:link
+{
+    font-size: 11pt;
+    color: blue;
+    font-family: 宋体;
+    text-decoration: none;
+}
+
+A:visited
+{
+    text-decoration: none;
+    font-family: 宋体;
+    font-size: 11pt;
+    color: blue;
+}
+
+A:active
+{
+    font-size: 11pt;
+    color: red;
+    font-family: 宋体;
+    text-decoration: none;
+}
+
+A:hover
+{
+    text-decoration: underline;
+    font-family: 宋体;
+    font-size: 11pt;
+    color: red;
+}
+
+SMALL
+{
+    font-size: 9pt;
+}
+
+BIG
+{
+    font-size: 14pt;
+}
+
+BLOCKQUOTE, PRE
+{
+    font-family: Courier New, monospace;
+}
+
+
+UL LI
+{
+    list-style-type: square;
+}
+
+UL LI LI
+{
+    list-style-type: disc;
+}
+
+UL LI LI LI
+{
+    list-style-type: circle;
+}
+
+OL LI
+{
+    list-style-type: decimal;
+}
+
+OL OL LI
+{
+    list-style-type: lower-alpha;
+}
+
+OL OL OL LI
+{
+    list-style-type: lower-roman;
+}
+
+IMG
+{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+.title
+{
+	font-family: 黑体;
+	font-size: 11pt;
+    font-weight: bold;
+    color: Black;
+}
+
+.tips
+{
+	font-family: 宋体;
+	font-size: 11pt;
+    color: black;
+}
+
+.labelAuto
+{
+	font-family: 宋体;
+	font-size: 11pt;
+    color:Purple;
+}
+
+.labelNotNull
+{
+	font-family: 宋体;
+	font-size: 11pt;
+    color: red;
+}
+
+.label
+{
+	font-family: 宋体;
+	font-size: 11pt;
+}
+
+.labelVisited	
+{	
+	font-family: 宋体;
+	font-size: 11pt;
+	text-decoration: none;
+}	
+		
+.labelActive	
+{	
+	font-family: 宋体;
+	font-size: 11pt;
+	text-decoration: none;
+}	
+		
+.labelHover	
+{	
+	font-family: 宋体;
+	font-size: 11pt;
+	text-decoration: underline;
+}
+
+.button
+{
+	font-family: 宋体;
+	font-size: 11pt;
+}
+
+.textbox
+{
+	font-family: 宋体;
+	font-size: 11pt;
+}
