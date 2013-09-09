@@ -5446,6 +5446,289 @@ errProc:
         End Function
 
 
+        '----------------------------------------------------------------
+        ' 根据“查询条件”获取“阳光家缘楼盘信息数据分析”完全数据的数据集
+        '     strErrMsg                  ：如果错误，则返回错误信息
+        '     strSQL                     ：返回的SQL语句
+        '     strType                    ：选择楼盘的类型。0-全部；1-商业；2-住宅；3-办公
+        '     strWhere                   ：搜索字符串      
+        ' 返回
+        '     True                       ：成功
+        '     False                      ：失败
+        '----------------------------------------------------------------
+        Public Function getSql_BuildingCompute_x3_v2_1( _
+             ByRef strErrMsg As String, _
+             ByRef strSQL As String, _
+             ByVal strWhere As String, _
+             ByRef strType As String) As Boolean
+
+            getSql_BuildingCompute_x3_v2_1 = False
+
+            strSQL = ""
+            Select Case strType
+
+                Case "2"
+                    strSQL = strSQL + "  select a.*,isnull(b.i_sort,100000) as '楼盘排序' from ( "
+                    strSQL = strSQL + "       select b.行政区域,b.楼盘名称,case when b.房屋类型='1' then '别墅' else '洋房' end as 项目类型,  "
+                    strSQL = strSQL + "          a.累计已售套数 as 合共成交,   "
+                    strSQL = strSQL + "          a.累计已售面积,  "
+                    strSQL = strSQL + "          a.未售套数,   "
+                    strSQL = strSQL + "          a.未售面积,   "
+                    strSQL = strSQL + "          退房数,  "
+                    strSQL = strSQL + "          网签数,  "
+                    strSQL = strSQL + "          网签面积,  "
+                    strSQL = strSQL + "          网签总额,  "
+                    strSQL = strSQL + "          签约均价=case when b.网签面积=0 or b.网签数=0 then dbo.Sunshine_F_getDayHousePrice(b.楼盘名称,@endDate,b.房屋类型) "
+                    strSQL = strSQL + "                         else  cast(round((b.网签总额)/(b.网签面积),2) as numeric(16,2))  end, "
+                    strSQL = strSQL + "          累计均价=case when a.累计已售面积=0 or a.累计已售套数=0 then 0 else  cast(round((a.累计签约总额)/(a.累计已售面积),2) as numeric(16,2))  end "
+                    strSQL = strSQL + "           from  "
+                    strSQL = strSQL + "           (  "
+                    strSQL = strSQL + "           select  行政区域,C_HOUSE as 楼盘名称, isnull(c_type,0) as 房屋类型,  "
+                    strSQL = strSQL + "                   sum(当日退房套数) as 退房数, "
+                    strSQL = strSQL + "                   sum(当日签约套数) as 网签数, "
+                    strSQL = strSQL + "                   sum(当日签约面积) as 网签面积, "
+                    strSQL = strSQL + "                   sum(当日签约总额) as 网签总额 from  "
+                    strSQL = strSQL + "                     ( "
+                    '2013-08-26 排除 “双晖南轩、双晖北轩”、“云山名都”等项目，阳光家缘数据匹配时增加“行政区域”、“项目地址”，解决匹配表不定期更新问题；
+                    strSQL = strSQL + "                         select * from "
+                    strSQL = strSQL + "                         ( "
+                    strSQL = strSQL + "                             select a.序号,a.日期,a.项目名称,a.预售证,a.项目地址,a.开发商,a.行政区域, a.当日签约套数,a.当日签约面积,a.当日签约总额,a.当日签约均价, "
+                    strSQL = strSQL + "                                    a.当日退房套数,a.当日退房面积,a.累计已售面积,a.累计已售套数, a.累计已售均价,a.未售套数,a.未售面积,c.c_house,c.c_type "
+                    strSQL = strSQL + "                               from ( "
+                    strSQL = strSQL + "                                     select a.*,c.c_house as c_house1,c.c_type as c_type1 from T_DAY_HOUSE_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                                        where a.日期 between @startDate and @endDate "
+                    strSQL = strSQL + "                                     ) a "
+                    strSQL = strSQL + "                               join T_HOUSE_MATCH_XMID c on a.项目名称= c.c_xm_name and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                               where a.c_house1 is null "
+                    strSQL = strSQL + "                          ) a "
+                    strSQL = strSQL + "                         union "
+                    strSQL = strSQL + "                         select  * from "
+                    strSQL = strSQL + "                         ( "
+                    strSQL = strSQL + "                             select  * from ( "
+                    strSQL = strSQL + "                                              select a.*,c.c_house,c.c_type from T_DAY_HOUSE_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and 项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                                                 where a.日期 between @startDate and @endDate "
+                    strSQL = strSQL + "                                            )a "
+                    strSQL = strSQL + "                             where a.c_house is not null "
+                    strSQL = strSQL + "                         ) b "
+                    strSQL = strSQL + "                     )a  group by 行政区域,C_HOUSE,c_type   "
+                    strSQL = strSQL + "            )b  "
+                    strSQL = strSQL + "            left  Join  "
+                    strSQL = strSQL + "           ("
+                    strSQL = strSQL + "               select  行政区域,a.C_HOUSE as 楼盘名称, isnull(c_type,0) as 房屋类型,  "
+                    strSQL = strSQL + "                   sum(累计已售套数) as 累计已售套数,    "
+                    strSQL = strSQL + "                   sum(累计已售面积) as 累计已售面积,  "
+                    strSQL = strSQL + "                   sum(未售套数) as 未售套数,    "
+                    strSQL = strSQL + "                   sum(未售面积) as 未售面积, "
+                    strSQL = strSQL + "                   sum(累计已售面积*累计已售均价) as 累计签约总额 from "
+                    strSQL = strSQL + "                     ( "
+                    '2013-08-26 排除 “双晖南轩、双晖北轩”、“云山名都”等项目，阳光家缘数据匹配时增加“行政区域”、“项目地址”，解决匹配表不定期更新问题；
+                    strSQL = strSQL + "                         select * from "
+                    strSQL = strSQL + "                         ( "
+                    strSQL = strSQL + "                             select a.序号,a.日期,a.项目名称,a.预售证,a.项目地址,a.开发商,a.行政区域, a.当日签约套数,a.当日签约面积,a.当日签约总额,a.当日签约均价, "
+                    strSQL = strSQL + "                                    a.当日退房套数,a.当日退房面积,a.累计已售面积,a.累计已售套数, a.累计已售均价,a.未售套数,a.未售面积,c.c_house,c.c_type "
+                    strSQL = strSQL + "                               from ( "
+                    strSQL = strSQL + "                                     select a.*,c.c_house as c_house1,c.c_type as c_type1 from T_DAY_HOUSE_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                                        where a.日期=@endDate "
+                    strSQL = strSQL + "                                     ) a "
+                    strSQL = strSQL + "                               join T_HOUSE_MATCH_XMID c on a.项目名称= c.c_xm_name and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                               where a.c_house1 is null "
+                    strSQL = strSQL + "                          ) a "
+                    strSQL = strSQL + "                         union "
+                    strSQL = strSQL + "                         select  * from "
+                    strSQL = strSQL + "                         ( "
+                    strSQL = strSQL + "                             select  * from ( "
+                    strSQL = strSQL + "                                              select a.*,c.c_house,c.c_type from T_DAY_HOUSE_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and 项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                                                 where a.日期= @endDate "
+                    strSQL = strSQL + "                                            )a "
+                    strSQL = strSQL + "                             where a.c_house is not null "
+                    strSQL = strSQL + "                         ) b "
+                    strSQL = strSQL + "                     )a  group by 行政区域,C_HOUSE,c_type   "
+                    strSQL = strSQL + "           )a on b.楼盘名称=a.楼盘名称 and b.房屋类型=a.房屋类型  "
+                    strSQL = strSQL + "  ) A left join (select * from T_HOUSE_MATCH_SORT where i_type=convert(integer,'" + strType + "')) b on b.c_NAME=a.楼盘名称 "
+                    If strWhere <> "" Then
+                        strSQL = strSQL + "where " + strWhere
+                    End If
+
+                Case "3"
+                    strSQL = strSQL + "  select a.*,isnull(b.i_sort,100000) as '楼盘排序' from "
+                    strSQL = strSQL + "  (	"
+                    strSQL = strSQL + "     select b.行政区域,b.楼盘名称,b.项目类型, "
+                    strSQL = strSQL + "          a.累计已售套数 as 合共成交,   "
+                    strSQL = strSQL + "          a.累计已售面积,  "
+                    strSQL = strSQL + "          a.未售套数,   "
+                    strSQL = strSQL + "          a.未售面积,   "
+                    strSQL = strSQL + "          退房数,  "
+                    strSQL = strSQL + "          网签数,  "
+                    strSQL = strSQL + "          网签面积,  "
+                    strSQL = strSQL + "          网签总额,  "
+                    strSQL = strSQL + "          签约均价=case when b.网签面积=0 or b.网签数=0 then dbo.Sunshine_F_getDayOfficePrice(b.楼盘名称,@endDate) "
+                    strSQL = strSQL + "                         else  cast(round((b.网签总额)/(b.网签面积),2) as numeric(16,2))  end, "
+                    strSQL = strSQL + "          累计均价=case when a.累计已售面积=0 or a.累计已售套数=0 then 0 else  cast(round((a.累计签约总额)/(a.累计已售面积),2) as numeric(16,2))  end "
+                    strSQL = strSQL + "           from  "
+                    strSQL = strSQL + "           (  "
+                    strSQL = strSQL + "         select  行政区域,C_HOUSE as 楼盘名称, '办公' as 项目类型, "
+                    strSQL = strSQL + "                   sum(当日退房套数) as 退房数, "
+                    strSQL = strSQL + "                   sum(当日签约套数) as 网签数, "
+                    strSQL = strSQL + "                   sum(当日签约面积) as 网签面积, "
+                    strSQL = strSQL + "                   sum(当日签约总额) as 网签总额 from  "
+                    strSQL = strSQL + "                     ( "
+                    '2013-08-26 排除 “双晖南轩、双晖北轩”、“云山名都”等项目，阳光家缘数据匹配时增加“行政区域”、“项目地址”，解决匹配表不定期更新问题；
+                    strSQL = strSQL + "                         select * from "
+                    strSQL = strSQL + "                         ( "
+                    strSQL = strSQL + "                             select a.序号,a.日期,a.项目名称,a.预售证,a.项目地址,a.开发商,a.行政区域, a.当日签约套数,a.当日签约面积,a.当日签约总额,a.当日签约均价, "
+                    strSQL = strSQL + "                                    a.当日退房套数,a.当日退房面积,a.累计已售面积,a.累计已售套数, a.累计已售均价,a.未售套数,a.未售面积,c.c_house,c.c_type "
+                    strSQL = strSQL + "                               from ( "
+                    strSQL = strSQL + "                                     select a.*,c.c_house as c_house1,c.c_type as c_type1 from T_DAY_Office_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                                        where a.日期 between @startDate and @endDate "
+                    strSQL = strSQL + "                                     ) a "
+                    strSQL = strSQL + "                               join T_HOUSE_MATCH_XMID c on a.项目名称= c.c_xm_name and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                               where a.c_house1 is null "
+                    strSQL = strSQL + "                          ) a "
+                    strSQL = strSQL + "                         union "
+                    strSQL = strSQL + "                         select  * from "
+                    strSQL = strSQL + "                         ( "
+                    strSQL = strSQL + "                             select  * from ( "
+                    strSQL = strSQL + "                                              select a.*,c.c_house,c.c_type from T_DAY_Office_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and 项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                                                 where a.日期 between @startDate and @endDate "
+                    strSQL = strSQL + "                                            )a "
+                    strSQL = strSQL + "                             where a.c_house is not null "
+                    strSQL = strSQL + "                         ) b "
+                    strSQL = strSQL + "                     )a  group by 行政区域,C_HOUSE  "
+                    strSQL = strSQL + "          )b "
+                    strSQL = strSQL + "          left  Join "
+                    strSQL = strSQL + "         ("
+                    strSQL = strSQL + "             select  行政区域,a.C_HOUSE as 楼盘名称, '办公' as 项目类型, "
+                    strSQL = strSQL + "                   sum(累计已售套数) as 累计已售套数,    "
+                    strSQL = strSQL + "                   sum(累计已售面积) as 累计已售面积,  "
+                    strSQL = strSQL + "                   sum(未售套数) as 未售套数,    "
+                    strSQL = strSQL + "                   sum(未售面积) as 未售面积, "
+                    strSQL = strSQL + "                   sum(累计已售面积*累计已售均价) as 累计签约总额 from "
+                    strSQL = strSQL + "                     ( "
+                    '2013-08-26 排除 “双晖南轩、双晖北轩”、“云山名都”等项目，阳光家缘数据匹配时增加“行政区域”、“项目地址”，解决匹配表不定期更新问题；
+                    strSQL = strSQL + "                         select * from "
+                    strSQL = strSQL + "                         ( "
+                    strSQL = strSQL + "                             select a.序号,a.日期,a.项目名称,a.预售证,a.项目地址,a.开发商,a.行政区域, a.当日签约套数,a.当日签约面积,a.当日签约总额,a.当日签约均价, "
+                    strSQL = strSQL + "                                    a.当日退房套数,a.当日退房面积,a.累计已售面积,a.累计已售套数, a.累计已售均价,a.未售套数,a.未售面积,c.c_house,c.c_type "
+                    strSQL = strSQL + "                               from ( "
+                    strSQL = strSQL + "                                     select a.*,c.c_house as c_house1,c.c_type as c_type1 from T_DAY_Office_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                                        where a.日期=@endDate "
+                    strSQL = strSQL + "                                     ) a "
+                    strSQL = strSQL + "                               join T_HOUSE_MATCH_XMID c on a.项目名称= c.c_xm_name and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                               where a.c_house1 is null "
+                    strSQL = strSQL + "                          ) a "
+                    strSQL = strSQL + "                         union "
+                    strSQL = strSQL + "                         select  * from "
+                    strSQL = strSQL + "                         ( "
+                    strSQL = strSQL + "                             select  * from ( "
+                    strSQL = strSQL + "                                              select a.*,c.c_house,c.c_type from T_DAY_Office_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and 项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                                                 where a.日期= @endDate "
+                    strSQL = strSQL + "                                            )a "
+                    strSQL = strSQL + "                             where a.c_house is not null "
+                    strSQL = strSQL + "                         ) b "
+                    strSQL = strSQL + "                     )a  group by 行政区域,C_HOUSE  "
+                    strSQL = strSQL + "         )a on b.楼盘名称=a.楼盘名称 "
+                    strSQL = strSQL + "     ) A left join (select * from T_HOUSE_MATCH_SORT where i_type=convert(integer,'" + strType + "')) b on b.c_NAME=a.楼盘名称 "
+                    If strWhere <> "" Then
+                        strSQL = strSQL + "where " + strWhere
+                    End If
+                Case "1"
+                    strSQL = strSQL + "  select a.*,isnull(b.i_sort,100000) as '楼盘排序' from "
+                    strSQL = strSQL + "  (	"
+                    strSQL = strSQL + "     select b.行政区域,b.楼盘名称,b.项目类型, "
+                    strSQL = strSQL + "          a.累计已售套数 as 合共成交,   "
+                    strSQL = strSQL + "          a.累计已售面积,  "
+                    strSQL = strSQL + "          a.未售套数,   "
+                    strSQL = strSQL + "          a.未售面积,   "
+                    strSQL = strSQL + "          退房数,  "
+                    strSQL = strSQL + "          网签数,  "
+                    strSQL = strSQL + "          网签面积,  "
+                    strSQL = strSQL + "          网签总额,  "
+                    strSQL = strSQL + "          签约均价=case when b.网签面积=0 or b.网签数=0 then dbo.Sunshine_F_getDayBusinessPrice(b.楼盘名称,@endDate) "
+                    strSQL = strSQL + "                         else  cast(round((b.网签总额)/(b.网签面积),2) as numeric(16,2))  end, "
+                    strSQL = strSQL + "          累计均价=case when a.累计已售面积=0 or a.累计已售套数=0 then 0 else  cast(round((a.累计签约总额)/(a.累计已售面积),2) as numeric(16,2))  end "
+                    strSQL = strSQL + "           from  "
+                    strSQL = strSQL + "         ( "
+                    strSQL = strSQL + "         select  行政区域,C_HOUSE as 楼盘名称, '商业' as 项目类型, "
+                    strSQL = strSQL + "                   sum(当日退房套数) as 退房数, "
+                    strSQL = strSQL + "                   sum(当日签约套数) as 网签数, "
+                    strSQL = strSQL + "                   sum(当日签约面积) as 网签面积, "
+                    strSQL = strSQL + "                   sum(当日签约总额) as 网签总额 from  "
+                    strSQL = strSQL + "                     ( "
+                    '2013-08-26 排除 “双晖南轩、双晖北轩”、“云山名都”等项目，阳光家缘数据匹配时增加“行政区域”、“项目地址”，解决匹配表不定期更新问题；
+                    strSQL = strSQL + "                         select * from "
+                    strSQL = strSQL + "                         ( "
+                    strSQL = strSQL + "                             select a.序号,a.日期,a.项目名称,a.预售证,a.项目地址,a.开发商,a.行政区域, a.当日签约套数,a.当日签约面积,a.当日签约总额,a.当日签约均价, "
+                    strSQL = strSQL + "                                    a.当日退房套数,a.当日退房面积,a.累计已售面积,a.累计已售套数, a.累计已售均价,a.未售套数,a.未售面积,c.c_house,c.c_type "
+                    strSQL = strSQL + "                               from ( "
+                    strSQL = strSQL + "                                     select a.*,c.c_house as c_house1,c.c_type as c_type1 from T_DAY_Business_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                                        where a.日期 between @startDate and @endDate "
+                    strSQL = strSQL + "                                     ) a "
+                    strSQL = strSQL + "                               join T_HOUSE_MATCH_XMID c on a.项目名称= c.c_xm_name and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                               where a.c_house1 is null "
+                    strSQL = strSQL + "                          ) a "
+                    strSQL = strSQL + "                         union "
+                    strSQL = strSQL + "                         select  * from "
+                    strSQL = strSQL + "                         ( "
+                    strSQL = strSQL + "                             select  * from ( "
+                    strSQL = strSQL + "                                              select a.*,c.c_house,c.c_type from T_DAY_Business_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and 项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                                                 where a.日期 between @startDate and @endDate "
+                    strSQL = strSQL + "                                            )a "
+                    strSQL = strSQL + "                             where a.c_house is not null "
+                    strSQL = strSQL + "                         ) b "
+                    strSQL = strSQL + "                     )a  group by 行政区域,C_HOUSE "
+                    strSQL = strSQL + "          )b "
+                    strSQL = strSQL + "          left  Join "
+                    strSQL = strSQL + "         ("
+                    strSQL = strSQL + "             select  行政区域,a.C_HOUSE as 楼盘名称, '商业' as 项目类型, "
+                    strSQL = strSQL + "                   sum(累计已售套数) as 累计已售套数,    "
+                    strSQL = strSQL + "                   sum(累计已售面积) as 累计已售面积,  "
+                    strSQL = strSQL + "                   sum(未售套数) as 未售套数,    "
+                    strSQL = strSQL + "                   sum(未售面积) as 未售面积, "
+                    strSQL = strSQL + "                   sum(累计已售面积*累计已售均价) as 累计签约总额 from "
+                    strSQL = strSQL + "                     ( "
+                    '2013-08-26 排除 “双晖南轩、双晖北轩”、“云山名都”等项目，阳光家缘数据匹配时增加“行政区域”、“项目地址”，解决匹配表不定期更新问题；
+                    strSQL = strSQL + "                         select * from "
+                    strSQL = strSQL + "                         ( "
+                    strSQL = strSQL + "                             select a.序号,a.日期,a.项目名称,a.预售证,a.项目地址,a.开发商,a.行政区域, a.当日签约套数,a.当日签约面积,a.当日签约总额,a.当日签约均价, "
+                    strSQL = strSQL + "                                    a.当日退房套数,a.当日退房面积,a.累计已售面积,a.累计已售套数, a.累计已售均价,a.未售套数,a.未售面积,c.c_house,c.c_type "
+                    strSQL = strSQL + "                               from ( "
+                    strSQL = strSQL + "                                     select a.*,c.c_house as c_house1,c.c_type as c_type1 from T_DAY_Business_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                                        where a.日期=@endDate "
+                    strSQL = strSQL + "                                     ) a "
+                    strSQL = strSQL + "                               join T_HOUSE_MATCH_XMID c on a.项目名称= c.c_xm_name and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                               where a.c_house1 is null "
+                    strSQL = strSQL + "                          ) a "
+                    strSQL = strSQL + "                         union "
+                    strSQL = strSQL + "                         select  * from "
+                    strSQL = strSQL + "                         ( "
+                    strSQL = strSQL + "                             select  * from ( "
+                    strSQL = strSQL + "                                              select a.*,c.c_house,c.c_type from T_DAY_Business_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and 项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
+                    strSQL = strSQL + "                                                 where a.日期= @endDate "
+                    strSQL = strSQL + "                                            )a "
+                    strSQL = strSQL + "                             where a.c_house is not null "
+                    strSQL = strSQL + "                         ) b "
+                    strSQL = strSQL + "                     )a  group by 行政区域,C_HOUSE "
+                    strSQL = strSQL + "         )a on b.楼盘名称=a.楼盘名称 "
+                    strSQL = strSQL + "     ) A left join (select * from T_HOUSE_MATCH_SORT where i_type=convert(integer,'" + strType + "')) b on b.c_NAME=a.楼盘名称 "
+                    If strWhere <> "" Then
+                        strSQL = strSQL + "where " + strWhere
+                    End If
+                Case Else
+
+            End Select
+
+            getSql_BuildingCompute_x3_v2_1 = True
+errProc:
+
+            Exit Function
+        End Function
+
+
+
+
+
+
+
 
 
         '----------------------------------------------------------------
@@ -5491,7 +5774,10 @@ errProc:
                     strSQL = strSQL + "                   sum(当日签约面积) as 网签面积, "
                     strSQL = strSQL + "                   sum(当日签约总额) as 网签总额 from  "
                     strSQL = strSQL + "                     ( "
-                    strSQL = strSQL + "                     select a.*,c.c_house,c.c_type from T_DAY_HOUSE_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID "
+                    'strSQL = strSQL + "                     select a.*,c.c_house,c.c_type from T_DAY_HOUSE_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID "
+                    'strSQL = strSQL + "                       where a.日期  between @startDate and @endDate  "
+                    '2013-08-26 排除 “双晖南轩、双晖北轩”、“云山名都”等项目，阳光家缘数据匹配时增加“行政区域”、“项目地址”
+                    strSQL = strSQL + "                     select a.*,c.c_house,c.c_type from T_DAY_HOUSE_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and a.项目地址=c.c_xm_address and a.行政区域=c.C_XZQY "
                     strSQL = strSQL + "                       where a.日期  between @startDate and @endDate  "
                     strSQL = strSQL + "                     )a  group by 行政区域,C_HOUSE,c_type   "
                     strSQL = strSQL + "            )b  "
@@ -5504,7 +5790,10 @@ errProc:
                     strSQL = strSQL + "                   sum(未售面积) as 未售面积, "
                     strSQL = strSQL + "                   sum(累计已售面积*累计已售均价) as 累计签约总额 from "
                     strSQL = strSQL + "                     ( "
-                    strSQL = strSQL + "                     select a.*,c.c_house,c.c_type from T_DAY_HOUSE_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID  "
+                    'strSQL = strSQL + "                     select a.*,c.c_house,c.c_type from T_DAY_HOUSE_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID  "
+                    'strSQL = strSQL + "                      where a.日期=@endDate  "
+                    '2013-08-26 排除 “双晖南轩、双晖北轩”、“云山名都”等项目，阳光家缘数据匹配时增加“行政区域”、“项目地址”
+                    strSQL = strSQL + "                     select a.*,c.c_house,c.c_type from T_DAY_HOUSE_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
                     strSQL = strSQL + "                      where a.日期=@endDate  "
                     strSQL = strSQL + "                     )a  group by 行政区域,C_HOUSE,c_type   "
                     strSQL = strSQL + "           )a on b.楼盘名称=a.楼盘名称 and b.房屋类型=a.房屋类型  "
@@ -5536,7 +5825,10 @@ errProc:
                     strSQL = strSQL + "                   sum(当日签约面积) as 网签面积, "
                     strSQL = strSQL + "                   sum(当日签约总额) as 网签总额 from  "
                     strSQL = strSQL + "                     ( "
-                    strSQL = strSQL + "                     select a.*,c.c_house from T_DAY_Office_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID "
+                    'strSQL = strSQL + "                     select a.*,c.c_house from T_DAY_Office_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID "
+                    'strSQL = strSQL + "                       where a.日期  between @startDate and @endDate  "
+                    '2013-08-26 排除 “双晖南轩、双晖北轩”、“云山名都”等项目，阳光家缘数据匹配时增加“行政区域”、“项目地址”
+                    strSQL = strSQL + "                     select a.*,c.c_house from T_DAY_Office_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
                     strSQL = strSQL + "                       where a.日期  between @startDate and @endDate  "
                     strSQL = strSQL + "                     )a  group by 行政区域,C_HOUSE  "
                     strSQL = strSQL + "          )b "
@@ -5549,7 +5841,10 @@ errProc:
                     strSQL = strSQL + "                   sum(未售面积) as 未售面积, "
                     strSQL = strSQL + "                   sum(累计已售面积*累计已售均价) as 累计签约总额 from "
                     strSQL = strSQL + "                     ( "
-                    strSQL = strSQL + "                     select a.*,c.c_house from T_DAY_Office_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID  "
+                    'strSQL = strSQL + "                     select a.*,c.c_house from T_DAY_Office_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID  "
+                    'strSQL = strSQL + "                      where a.日期=@endDate  "
+                    '2013-08-26 排除 “双晖南轩、双晖北轩”、“云山名都”等项目，阳光家缘数据匹配时增加“行政区域”、“项目地址”
+                    strSQL = strSQL + "                     select a.*,c.c_house from T_DAY_Office_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
                     strSQL = strSQL + "                      where a.日期=@endDate  "
                     strSQL = strSQL + "                     )a  group by 行政区域,C_HOUSE  "
                     strSQL = strSQL + "         )a on b.楼盘名称=a.楼盘名称 "
@@ -5580,7 +5875,10 @@ errProc:
                     strSQL = strSQL + "                   sum(当日签约面积) as 网签面积, "
                     strSQL = strSQL + "                   sum(当日签约总额) as 网签总额 from  "
                     strSQL = strSQL + "                     ( "
-                    strSQL = strSQL + "                     select a.*,c.c_house from T_DAY_Business_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID "
+                    'strSQL = strSQL + "                     select a.*,c.c_house from T_DAY_Business_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID "
+                    'strSQL = strSQL + "                       where a.日期  between @startDate and @endDate  "
+                    '2013-08-26 排除 “双晖南轩、双晖北轩”、“云山名都”等项目，阳光家缘数据匹配时增加“行政区域”、“项目地址”
+                    strSQL = strSQL + "                     select a.*,c.c_house from T_DAY_Business_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
                     strSQL = strSQL + "                       where a.日期  between @startDate and @endDate  "
                     strSQL = strSQL + "                     )a  group by 行政区域,C_HOUSE "
                     strSQL = strSQL + "          )b "
@@ -5593,7 +5891,10 @@ errProc:
                     strSQL = strSQL + "                   sum(未售面积) as 未售面积, "
                     strSQL = strSQL + "                   sum(累计已售面积*累计已售均价) as 累计签约总额 from "
                     strSQL = strSQL + "                     ( "
-                    strSQL = strSQL + "                     select a.*,c.c_house from T_DAY_Business_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID  "
+                    'strSQL = strSQL + "                     select a.*,c.c_house from T_DAY_Business_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID  "
+                    'strSQL = strSQL + "                      where a.日期=@endDate  "
+                    '2013-08-26 排除 “双晖南轩、双晖北轩”、“云山名都”等项目，阳光家缘数据匹配时增加“行政区域”、“项目地址”
+                    strSQL = strSQL + "                     select a.*,c.c_house from T_DAY_Business_INFO a left join T_HOUSE_MATCH_XMID c on a.项目名称=c.C_XM_NAME and a.预售证=c.C_XM_ID and a.项目地址=c.c_xm_address  and a.行政区域=c.C_XZQY "
                     strSQL = strSQL + "                      where a.日期=@endDate  "
                     strSQL = strSQL + "                     )a  group by 行政区域,C_HOUSE "
                     strSQL = strSQL + "         )a on b.楼盘名称=a.楼盘名称 "
@@ -6198,9 +6499,13 @@ errProc:
                     With Me.m_objSqlDataAdapter
 
                         '获取查询语句      
-                        If getSql_BuildingCompute_x3_v2(strErrMsg, strSQL, strWhere, strType) = False Then
+                        'If getSql_BuildingCompute_x3_v2(strErrMsg, strSQL, strWhere, strType) = False Then
+                        '    GoTo errProc
+                        'End If
+                        If getSql_BuildingCompute_x3_v2_1(strErrMsg, strSQL, strWhere, strType) = False Then
                             GoTo errProc
                         End If
+
 
                         strSQL_0 = ""
                         strSQL_0 = strSQL_0 + " select * from "

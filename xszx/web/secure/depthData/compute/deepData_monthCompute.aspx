@@ -102,6 +102,8 @@
 														          <td class="label"  align="right">&nbsp;选择分析类型&nbsp;</TD>
 														          <td align="left"><asp:DropDownList id="ddlType" Runat="server" CssClass="textbox" Columns="12">
 																	  <asp:ListItem Value="0" Selected="True">全市</asp:ListItem>
+																	  <asp:ListItem Value="10">中心六区</asp:ListItem>
+																	  <asp:ListItem Value="11">十区</asp:ListItem>
 																	  <asp:ListItem Value="1">各区域</asp:ListItem>
 																	  <asp:ListItem Value="2">各物业属性</asp:ListItem>
 																	  <asp:ListItem Value="3">各房型</asp:ListItem>
@@ -145,8 +147,6 @@
 				                                                            <asp:ListItem Value="花都区">花都</asp:ListItem>
 				                                                            <asp:ListItem Value="增城市">增城</asp:ListItem>
 				                                                            <asp:ListItem Value="从化市">从化</asp:ListItem>
-				                                                            <asp:ListItem Value="六区">六区</asp:ListItem>
-				                                                            <asp:ListItem Value="十区">十区</asp:ListItem>
                                                                             </asp:DropDownList>
                                                                         </td>	
                                                                         <td class="label"  align="right" >&nbsp;项目名称&nbsp;</TD>

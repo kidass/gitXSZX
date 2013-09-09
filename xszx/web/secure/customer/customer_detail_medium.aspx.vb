@@ -706,7 +706,13 @@ errProc:
                 Me.m_strQuery_Compute = strQuery
                 Me.htxtComputeQuery.Value = Me.m_strQuery_Compute
 
-             
+                '记录日志
+                With New Xydc.Platform.DataAccess.dacSystemOperate
+                    If .doSaveOperateLogData(strErrMsg, MyBase.UserId, MyBase.UserPassword, Request.UserHostAddress, Request.UserHostName, _
+                        Xydc.Platform.Common.Data.LogData.OperateType_select, Xydc.Platform.Common.Data.CustomerMediumData.TABLE_House_B_MediumCustomer, strQuery) = False Then
+                        GoTo errProc
+                    End If
+                End With
 
             Catch ex As Exception
                 strErrMsg = ex.Message
@@ -940,6 +946,17 @@ errProc:
             '控件初始化
             If Me.initializeControls(strErrMsg) = False Then
                 GoTo errProc
+            End If
+
+            '访问日志
+            If Me.IsPostBack = False Then
+                If Me.m_blnSaveScence = False Then
+                    With New Xydc.Platform.DataAccess.dacSystemOperate
+                        If .doSaveVisitLogData(strErrMsg, MyBase.UserId, MyBase.UserPassword, Request.UserHostAddress, Request.UserHostName, "customer_detail_medium.aspx", "二手客户明细数据查询") = False Then
+                            GoTo errProc
+                        End If
+                    End With
+                End If
             End If
 normExit:
             Xydc.Platform.web.MessageProcess.SafeRelease(objMessageProcess)

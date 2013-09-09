@@ -303,17 +303,9 @@ Namespace Xydc.Platform.DataAccess
                     With Me.m_objSqlDataAdapter
                         '准备SQL
                         Select Case strType
-
                             Case "0"
-                                '全市
-                                If strWhere = "六区" Or strWhere = "十区" Then
-                                    strSQL = ""
-                                    strSQL = strSQL + " exec SalesMessage_P_computeAll_V2 " + strWhere + "," + strWhere_0 + ", @strHouseType,@startDate,@endDate" + vbCr
-                                Else
-                                    strSQL = ""
-                                    strSQL = strSQL + " exec SalesMessage_P_computeAll_V2 " + strWhere + "," + strWhere_0 + ", @strHouseType,@startDate,@endDate" + vbCr
-                                End If
-                               
+                                strSQL = ""
+                                strSQL = strSQL + " exec SalesMessage_P_computeAll_V2 " + strWhere + "," + strWhere_0 + ", @strHouseType,@startDate,@endDate" + vbCr
                             Case "1"
                                 strSQL = ""
                                 strSQL = strSQL + " exec SalesMessage_P_getEveryRegion_V2 " + strWhere + "," + strWhere_0 + ", @strHouseType,@startDate,@endDate" + vbCr
@@ -349,6 +341,15 @@ Namespace Xydc.Platform.DataAccess
                             Case "9"
                                 strSQL = ""
                                 strSQL = strSQL + " exec SalesMessage_P_getMainhouse_V2 " + strWhere + "," + strWhere_0 + ",@strHouseType,@startDate,@endDate" + vbCr
+
+                            Case "10"
+                                strSQL = ""
+                                strSQL = strSQL + " exec SalesMessage_P_computeSixRegion_V2 " + strWhere + "," + strWhere_0 + ", @strHouseType,@startDate,@endDate" + vbCr
+
+                            Case "11"
+                                strSQL = ""
+                                strSQL = strSQL + " exec SalesMessage_P_computeTenRegion_V2 " + strWhere + "," + strWhere_0 + ", @strHouseType,@startDate,@endDate" + vbCr
+
 
                             Case Else
 

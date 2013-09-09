@@ -98,6 +98,9 @@
     <Compile Include="Data\SUNSHINEDDATA\sunshineData.vb">
       <SubType>SUNSHINE</SubType>
     </Compile>
+    <Compile Include="Data\System\LogData.vb">
+      <SubType>System</SubType>
+    </Compile>
     <Compile Include="jsoaConfiguration.vb" />
     <Compile Include="Data\baseCustomerData.vb">
       <SubType>BASE</SubType>

@@ -118,6 +118,7 @@
     <Compile Include="QZBJ\dacEditWorkFlow.vb" />
     <Compile Include="SUNSHINEDDATA\dacSunshine.vb" />
     <Compile Include="SUNSHINEDDATA\dacSunshine_x2.vb" />
+    <Compile Include="System\dacSystemOperate.vb" />
     <Compile Include="XTGL\dacAppManager.vb" />
     <Compile Include="XTPZ\dacBudengshezhi.vb" />
     <Compile Include="XTPZ\dacDubanshezhi.vb" />

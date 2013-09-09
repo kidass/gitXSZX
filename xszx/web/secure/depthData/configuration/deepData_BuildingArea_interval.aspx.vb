@@ -882,6 +882,16 @@ errProc:
                 End If
             End If
 
+            '访问日志
+            If Me.IsPostBack = False Then
+                If Me.m_blnSaveScence = False Then
+                    With New Xydc.Platform.DataAccess.dacSystemOperate
+                        If .doSaveVisitLogData(strErrMsg, MyBase.UserId, MyBase.UserPassword, Request.UserHostAddress, Request.UserHostName, "deepData_BuildingArea_interval.aspx", "建筑面积段配置") = False Then
+                            GoTo errProc
+                        End If
+                    End With
+                End If
+            End If
 normExit:
             Xydc.Platform.web.MessageProcess.SafeRelease(objMessageProcess)
             Exit Sub
@@ -1541,6 +1551,22 @@ errProc:
                         Xydc.Platform.SystemFramework.ApplicationLog.WriteAuditPZInfo(Request.UserHostAddress, Request.UserHostName, "[" + MyBase.UserId + "]修改了[建筑面积段]字典！")
                 End Select
 
+                '记录日志
+                With New Xydc.Platform.DataAccess.dacSystemOperate
+                    Select Me.m_objenumEditType
+                        Case Xydc.Platform.Common.Utilities.PulicParameters.enumEditType.eAddNew
+                            If .doSaveOperateLogData(strErrMsg, MyBase.UserId, MyBase.UserPassword, Request.UserHostAddress, Request.UserHostName, Xydc.Platform.Common.Data.LogData.OperateType_insert, _
+                               Xydc.Platform.Common.Data.DeepData.TABLE_House_B_BuildingArea_Interval, "添加了" + Me.txtDM.Text) = False Then
+                                GoTo errProc
+                            End If
+                        Case Else
+                            If .doSaveOperateLogData(strErrMsg, MyBase.UserId, MyBase.UserPassword, Request.UserHostAddress, Request.UserHostName, Xydc.Platform.Common.Data.LogData.OperateType_insert, _
+                               Xydc.Platform.Common.Data.DeepData.TABLE_House_B_BuildingArea_Interval, "修改了" + Me.txtDM.Text) = False Then
+                                GoTo errProc
+                            End If
+                    End Select
+                End With
+
                 '最终设置编辑模式
                 Me.m_blnEditMode = False
                 Me.m_objenumEditType = Xydc.Platform.Common.Utilities.PulicParameters.enumEditType.eSelect
@@ -1706,6 +1732,13 @@ errProc:
 
                             '记录审计日志
                             Xydc.Platform.SystemFramework.ApplicationLog.WriteAuditPZInfo(Request.UserHostAddress, Request.UserHostName, "[" + MyBase.UserId + "]在[建筑面积段]字典中删除了[" + strJJCD + "]！")
+                            '记录日志
+                            With New Xydc.Platform.DataAccess.dacSystemOperate
+                                If .doSaveOperateLogData(strErrMsg, MyBase.UserId, MyBase.UserPassword, Request.UserHostAddress, Request.UserHostName, Xydc.Platform.Common.Data.LogData.OperateType_delete, _
+                                           Xydc.Platform.Common.Data.DeepData.TABLE_House_B_BuildingArea_Interval, "删除了" + strJJCD) = False Then
+                                    GoTo errProc
+                                End If
+                            End With
                         End If
                     Next
 

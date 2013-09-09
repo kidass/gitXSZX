@@ -725,6 +725,15 @@ errProc:
                 Me.htxtStartDate.Value = Me.txtStartDate.Text.Trim
                 Me.htxtEndDate.Value = Me.txtEndDate.Text.Trim
                 Me.htxtHouseType.Value = Me.ddlHouseType.SelectedValue
+
+
+                '记录日志
+                With New Xydc.Platform.DataAccess.dacSystemOperate
+                    If .doSaveOperateLogData(strErrMsg, MyBase.UserId, MyBase.UserPassword, Request.UserHostAddress, Request.UserHostName, _
+                        Xydc.Platform.Common.Data.LogData.OperateType_select, Xydc.Platform.Common.Data.DeepData.TABLE_House_V_Data_DetailStatistics, strQuery + "," + strQuery_0) = False Then
+                        GoTo errProc
+                    End If
+                End With
             Catch ex As Exception
                 strErrMsg = ex.Message
                 GoTo errProc
@@ -942,6 +951,17 @@ errProc:
             '控件初始化
             If Me.initializeControls(strErrMsg) = False Then
                 GoTo errProc
+            End If
+
+            '访问日志
+            If Me.IsPostBack = False Then
+                If Me.m_blnSaveScence = False Then
+                    With New Xydc.Platform.DataAccess.dacSystemOperate
+                        If .doSaveVisitLogData(strErrMsg, MyBase.UserId, MyBase.UserPassword, Request.UserHostAddress, Request.UserHostName, "deepData_monthCompute.aspx", "销售数据月度分析查询") = False Then
+                            GoTo errProc
+                        End If
+                    End With
+                End If
             End If
 normExit:
             Xydc.Platform.web.MessageProcess.SafeRelease(objMessageProcess)
